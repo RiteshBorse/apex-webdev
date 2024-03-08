@@ -78,4 +78,13 @@ p{
     font-family: Poppins;
     margin-top: 8px;
     margin-bottom: 0;
+    transition: transform 0.3s;
 }
+a{
+    color: black;
+    font-style: normal;
+}
+p:hover{
+    transform: translateY(-2px);
+}
+
