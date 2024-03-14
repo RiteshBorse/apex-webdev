@@ -1,152 +1,137 @@
 *{
+   
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Poppins;
-    }
-    
-    hr{
-        counter-reset: #C5C2C2;
-        padding-left: 13%;
-
+   
     }
 
-ul{
-    
-    list-style-type: none;
-    line-height: 2.5rem;
-    font-weight: 200;
-    font-size: 18px;
-    padding-left: 25%;
-    padding-top: 2%;
-    text-align: left;
-}
-
-.Message{
-    line-height: 2.5rem;
-    font-weight: 300;
-    font-size: 20px;
-    padding-left: 17%;
-    padding-top: 2%;
-    text-align: left;
-    padding-bottom: 2%;
-}
-
-    .con{
+    .split{
         display: grid;
         height: 100vh;
-        grid-template-columns:1fr 4fr;
-        grid-template-rows: 0.1fr 0.95fr;
+        grid-template-columns:20% 80%;
+        grid-template-rows: 10% 90%;
         color: #050301;
         grid-template-areas: "component component "
                                 "Sidebar main"
-                                "Sidebar main"
-                                "Sidebar main"
-                                "sidebar main" ;
+                               
+                               ;
             
-                                text-align: center;
-                                font-size: 1.5rem;
-    
+                               
     }
 
-   
+    ul{
+    
+        list-style-type: none;
+        line-height: 2.5rem;
+        font-weight: 200;
+        font-size: 18px;
+        margin-left: 25%;
+        margin-top: 2%;
+        text-align: left;
+    }
 
-    .component{background: #F5F0EA;
+    hr{
+        counter-reset: #C5C2C2;
+        margin-left: 13%;
+    }
+
+    .logIn-div{
+        padding-left: 75%;
+     
       
-        grid-area: component;
-        display: flex;
-        justify-content: flex-end; 
-        align-items: center; 
-        padding: 10px; 
-        position: relative; }
+     }
+     .logIn{
+        align-items: center;
+         color: black;
+         font-weight: 500;
+         font-size: 18px;
+         padding-top:8px;
+         padding-bottom: 8px;
+         padding-left: 25px;
+         padding-right: 25px;
+         background-color: rgb(240, 150, 123);
+         border: none;
+         border-radius: 20px;
+         
+     }
 
+    .component{
+    grid-area: component;
+    display: flex;
+    orientation: landscape;
+    background: #F5F0EA;
+    align-items: center;
+    }
+
+    main{
+        grid-area: main;
+    }
+
+    .Sidebar{
+        background: #F5F0EA;
+        grid-area: Sidebar;
+    }
 
     .searchBar{
-        height: 50%;
-       width: 70%;
+        height: 40px;
+       width: 600px;
         display: flex;
         cursor: pointer;
         padding: 10px;
        align-items: center;
         background: #ffffff;
         border-radius: 10px;
-        
-        
-        
+ 
     }
-
     .searchBar:hover input{
         width :1200px;
     }
 
-    .searchBar input{
+     .searchBar input{
         width: 0;
         outline: none;
         border: none;
-        font-weight: 500;
+        font-weight: 300;
         transition: 0.8s;
         background: transparent;
     }
 
+
     .searchBar i.fas {
-        font-size: 15px; /* Adjust the font size of the search icon */
+        font-size: 15px; 
         margin-right: 5px;
-        color: rgb(0, 1, 0); /* Adjust the spacing between the icon and the input */
+        color: rgb(0, 0, 0); 
     }
-
     .searchBar {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 20px;
+        position: absolute; 
+        margin-left: 400px;
+    
+        
+      
     }
-
     .apex {
-        position: absolute;
-        top: 8px;
-        left: 80px;
-        font-weight: 500;
-        align-items: center; 
-        font-size: 3rem;
+        font-weight: 400;
+     font-size: 3rem;
         color: #050301;
+        padding-left: 40px;
+    }
+
+    .Message{
+        line-height: 2.5rem;
+        font-weight: 300;
+        font-size: 20px;
+        padding-left: 17%;
+        padding-top: 2%;
+        text-align: left;
+        padding-bottom: 2%;
     }
     
-    main{background: #ffffff; grid-area: main;}
+    .image{
+       margin-left: 20px;
+    }
+
+   
 
 
-    .Sidebar{background:#F5F0EA ; 
-        grid-area: Sidebar;
-    
-    }
-    
-    
-    @media only screen and (max-width: 640px) {
-        .con {
-            grid-template-columns: 1fr;
-            grid-template-rows: 0.2fr;
-            grid-template-areas:  "component component "
-            "Sidebar main"
-            "Sidebar main"
-            "Sidebar main"
-            "sidebar main" ;
-;
-        }
-    
-        ul {
-            line-height: 1rem;
-            font-size: 14px; /* Adjust the font size for smaller screens */
-            padding-left: 20px; /* Adjust padding for smaller screens */
-        }
-    
-        .apex {
-            position: relative;
-            top: auto;
-            left: auto;
-            font-size: 1rem;
-            /* Adjust the font size for smaller screens */
-            text-align: center;
-            /* Center align the text on smaller screens */
-            margin-top: 10px;
-            /* Adjust margin-top for spacing */
-        }
-    }
