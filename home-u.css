@@ -21,20 +21,11 @@
                                
     }
 
-    ul{
     
-        list-style-type: none;
-        line-height: 2.5rem;
-        font-weight: 200;
-        font-size: 18px;
-        margin-left: 25%;
-        margin-top: 2%;
-        text-align: left;
-    }
 
     hr{
         counter-reset: #C5C2C2;
-        margin-left: 13%;
+        margin-left: 5%;
     }
 
     .logIn-div{
@@ -69,11 +60,7 @@
         grid-area: main;
     }
 
-    .Sidebar{
-        background: #F5F0EA;
-        grid-area: Sidebar;
-    }
-
+   
     .searchBar{
         height: 40px;
        width: 600px;
@@ -133,5 +120,29 @@
     }
 
    
+.Sidebar ul a{
+  
+}
 
+ul li:hover {
+    padding-left: 20px;
+    font-weight: 400;
+}
 
+.Sidebar{
+    background: #F5F0EA;
+    grid-area: Sidebar;
+    height: 100%;
+    transition: .8s;
+}
+
+.Sidebar ul {
+    
+    list-style-type: none;
+    line-height: 2.5rem;
+    font-weight: 200;
+    font-size: 18px;
+    margin-left: 25%;
+    margin-top: 2%;
+    text-align: left;
+}
