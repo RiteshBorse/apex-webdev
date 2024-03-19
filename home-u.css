@@ -5,9 +5,10 @@
     height: 100%;
     box-sizing: border-box;
     font-family: Poppins;
+    
 }
 
-.page{
+.page {
     display: grid;
    grid-template-rows: 10% 90%;
     background-color: rgb(255, 255, 255);
@@ -22,11 +23,14 @@
 
 }
 .navigation-bar{
-    display: flex;
-    flex-direction: row;
- align-items: center;
- justify-content: left;
-    background-color:#F5F0EA;;
+    display: grid;
+    grid-template-columns: 5% 25% 50% 20%;
+    grid-template-areas: "image apex searchBar logIn-div";
+    align-items: center;
+    justify-content:left;
+
+    background-color: #F5F0EA;
+
 }
 .sidebar{
     display: flex;
@@ -68,17 +72,18 @@ height: 40px;
 width: 40px;
 margin: 1%;
 align-items: center;
+justify-content: right;
  
 }
 
 .apex{
 display : flex;
 flex-direction: row;
-justify-content: center;
+justify-content: left;
 align-items: center;
 font-weight: 500;
 font-size:38px ;
-margin: 1%;
+margin: 0%;
     
 }
 .sidebar li{
@@ -103,3 +108,57 @@ ul li:hover {
 }
 
 
+.logIn-div{
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+    margin-right: 10%;
+
+}
+
+.button{
+
+  height: 60%;
+   width: 110px;
+   border: none;
+   
+    border-radius: 30px;
+    background-color:   rgb(240, 150, 123);;
+  
+ 
+}
+
+.searchBar{
+
+   justify-content:center;
+   margin: 1%;
+   height: auto;
+   width: 50%;
+   cursor: pointer;
+   margin-left: 60%;
+   margin-right: 10%;
+   padding: 10px;
+   align-items: center;
+   background: #ffffff;
+   border-radius: 10px;
+
+}
+
+ .searchBar input{
+    width: 30%;
+    outline: none;
+    border: none;
+    font-weight: 300;
+    align-items: start;
+    justify-content: left;
+    background: transparent;
+}
+
+
+.searchBar i.fas {
+    font-size: 15px; 
+    align-items: start;
+    justify-content: left;
+    color: rgb(0, 0, 0); 
+}
