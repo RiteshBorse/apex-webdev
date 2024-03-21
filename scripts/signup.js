@@ -1,5 +1,4 @@
-import { writeUserData } from '../scripts/firebase.js';
-
+import { readdata, writeUserData } from '../scripts/firebase.js';
 
 const button = document.querySelector('.js-signup-button');
 button.addEventListener(("click") , () => {
@@ -19,7 +18,8 @@ button.addEventListener(("click") , () => {
         username : document.querySelector('.js-set-username').value,
         password : document.querySelector('.js-set-password').value
     };
-        writeUserData(newUser);
+        writeUserData(newUser.username ,newUser);
+        
 });
 
 
