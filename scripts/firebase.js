@@ -27,7 +27,7 @@ export function writeUserData(username, newUser) {
     set(ref(db, 'users/' + username), newUser);
 };
 
-let retrivedData = '';
+export let retrivedData = '';
 export async function readdata(name) {
 
     const dbRef = ref(getDatabase());
@@ -40,5 +40,4 @@ export async function readdata(name) {
     }
 };
 
-console.log(retrivedData.middleName);
 

@@ -1,4 +1,4 @@
-import { readdata } from '../scripts/firebase.js';
+import { readdata , retrivedData } from '../scripts/firebase.js';
 let isSuccess = false;
 const button = document.querySelector(`.js-login-button`);
 
@@ -10,14 +10,14 @@ button.addEventListener(("click") , () => {
         inputUsername : document.querySelector('.js-username').value,
         inputPassword : document .querySelector('.js-password').value
     };
-   
+   readdata(inputUsername);
     if(check === '')
     {
         alert('User not found ');
     }
-    else if(check.apartmentName === enteredUser.inputApartId)
+    else if(retrivedData.apartmentName === enteredUser.inputApartId)
     {
-        if(check.password === enteredUser.inputPassword)
+        if(retrivedData.password === enteredUser.inputPassword)
         {
             alert('Login Successful');
         }
