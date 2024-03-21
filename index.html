@@ -6,9 +6,8 @@
     <title>Login</title>
    <link rel="stylesheet" href="login.css">
    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -21,41 +20,27 @@
                 
                 <div class="login-input-form">
                    <h2>Log in</h2>
-                    <input class="login-input" type="text" placeholder="Enter Apartment ID" required>
-                    <input class="login-input" type="text" placeholder="Username" required>
-                    <input class="login-input" type="password" placeholder="Password" required>  
-                    <button class="login-button" class>Login</button>
+                    <input class="login-input js-apartid" type="text" placeholder="Enter Apartment ID" required>
+                    <input class="login-input js-username" type="text" placeholder="Username" required>
+                    <input class="login-input js-password" type="password" placeholder="Password" required>  
+                    <button class="login-button js-login-button">Login</button>
                     <p>Forgot your Password ?</p>
                     <a href="sign-up.html"><p>Dont have a account ? Sign Up</p></a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyDwISHPEBgBixOR9x5xSEdu7Fb5NpNtyQc",
-          authDomain: "apex-webdev.firebaseapp.com",
-          databaseURL: "https://apex-webdev-default-rtdb.firebaseio.com",
-          projectId: "apex-webdev",
-          storageBucket: "apex-webdev.appspot.com",
-          messagingSenderId: "119052131768",
-          appId: "1:119052131768:web:eb11313fde4d211585434d",
-          measurementId: "G-FR7Z6FDJJP"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
+    <script src="scripts/firebase.js" type="module"></script>
+    <script src="scripts/login.js" type="module"></script>
     
+
+   
 </body>
 </html>
+
+
+
+
+
+
+
