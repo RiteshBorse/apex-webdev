@@ -27,6 +27,12 @@ document.querySelector('.js-login-button')
                         alert('Login Successful');
                         window.location.href = 'home-u.html';
                     }
+                    else {
+                        alert('Login Unsuccessful');
+                    }
+                }
+                else {
+                    alert('Login Unsuccessful');
                 }
             }
             else {

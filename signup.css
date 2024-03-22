@@ -7,11 +7,11 @@ body , html{
 
 .main{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 50% 50%;
     height: 100vh;
-    transition: all 0.5s;
+    transition: all 1s;
 }
-.split:hover{
+.main:hover{
     grid-template-columns: 25% 75%;
 }
 
