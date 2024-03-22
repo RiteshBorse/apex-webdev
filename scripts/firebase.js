@@ -23,18 +23,18 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase();
 
-export function writeUserData(username, newUser) {
-    set(ref(db, 'users/' + username), newUser);
+export async function writeUserData(username, newUser) {
+    await set(ref(db, 'users/' + username), newUser);
 };
 
-export let retrivedData = '';
+export let response = '';
 export async function readdata(name) {
 
     const dbRef = ref(getDatabase());
     const snapshot = await get(child(dbRef, `users/${name}`));
 
     if (snapshot.exists()) {
-        retrivedData = snapshot.val();
+        response = await snapshot.val();
     } else {
         return '';
     }
