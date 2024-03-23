@@ -1,7 +1,7 @@
 import { writeUserData } from '../scripts/firebase.js';
 
 document.querySelector('.js-signup-button')
-    .addEventListener(("click") , () => {
+    .addEventListener(("click") , async () => {
         const newUser = {
             firstName : document.querySelector('.js-name').value,
             middleName : document.querySelector('.js-middlename').value,
@@ -18,8 +18,9 @@ document.querySelector('.js-signup-button')
             username : document.querySelector('.js-set-username').value,
             password : document.querySelector('.js-set-password').value
         };
-            writeUserData(newUser.username ,newUser);
+            await writeUserData(newUser.username ,newUser);
             alert("User Registered");
+            window.location.href = 'index.html'
 
 });
 
