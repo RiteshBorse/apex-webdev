@@ -1,0 +1,64 @@
+.features {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ffffff;
+}
+
+.title-complaint {
+    height: 10%;
+    font-size: 30px;
+    margin: 2%;
+    align-items: center;
+    justify-content: center;
+}
+
+.complaint-box {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 12%;
+    background-color: #ffffff;
+    border: 2px solid #f1eded;
+    border-radius: 5px;
+    padding-left: 2%;
+    align-self: center;
+    box-sizing: border-box;
+}
+
+.complaint-input {
+    width: 70%;
+}
+
+.complaint-input-title {
+    padding-top: 2%;
+    padding-bottom: 0;
+    height: auto;
+    width: 800px;
+}
+
+.complaint-input-data {
+    height: auto;
+    width: 70%;
+    padding-top: 0;
+    width: none;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}
+
+.complaint-button {
+    width: 200px;
+    display: flex;
+    height: 30%;
+    align-items: center;
+    padding: 1%;
+    justify-content: center;
+}
+
+.complaint-button-div {
+    display: flex;
+    width: auto;
+    justify-self: center;
+    align-items: center;
+}

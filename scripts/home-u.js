@@ -10,7 +10,24 @@ document.querySelector('.js-complaint-track')
     .addEventListener(('click'), () => {
         document.querySelector('.js-features')
             .innerHTML = `
-                <p style=" color : green ; font-size : 45px; "> Complaint Tracking will be loaded Here</p>
+            <div class="title-complaint">Complaints</div>
+            <div class="complaint-box">
+                <div class="complaint-input">
+                    <div class="complaint-input-title">New Complaint</div>
+                    <input type="text" class="complaint-input-data"
+                        placeholder="Please provide detailed information about the complaint">
+                    <style>
+                        input[type="text"]::placeholder {
+
+                            color: #c5c3c3;
+                        }
+                    </style>
+
+                </div>
+                <div class="complaint-button-div">
+                    <button class="complaint-button">Create New Complaint</button>
+                </div>
+            </div>
             `;
     });
 
