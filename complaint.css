@@ -25,7 +25,7 @@
     justify-content: center;
 }
 
-.newComplaintBox{
+.complaint-box{
         display: flex;
         flex-direction: row;
         width: 80%;
@@ -39,19 +39,20 @@
         
 }
 
-.input{
+.complaint-input{
     width: 70%;
 }
 
-.newComplaint{
+.complaint-input-title{
  
     padding-top: 2%;
     padding-bottom: 0;
     height: auto;
     width: 800px;
+    font-weight: 400;
 }
 
-#inputComplaint{
+.complaint-input-data{
    height: auto;
    width: 70%;
    padding-top: 0;
@@ -61,7 +62,7 @@
    text-decoration: underline;
 }
 
-#complaintButton{
+.complaint-button{
     width: 200px;
     display: flex;
     height: 30%;
@@ -72,7 +73,7 @@
 
 }
 
-.button1{
+.complaint-button-div{
   
     display: flex;
     width: auto;
@@ -80,11 +81,53 @@
     align-items: center;
 }
 
-.complaintList{
+
+.complaint-list{
     display: flex;
+    font-weight: 200;
     flex-direction: row;
-    justify-self: center;
+    height: 50px;
+    width: 80%; 
+    margin-top: 50px;
+    padding-left: 2%;
+    align-self: center;
     align-items: center;
-    width: 80%;
-    margin: 5%;
+      
+        
+  
+}
+
+.Date-userName{
+    display: flex;
+    color: #707070; 
+    flex-direction: row;
+    height: 30px;
+    
+}
+.user-name{
+padding-left: 10px;
+}
+
+.date{
+    padding-right: 10px;
+}
+
+.user-complaint{
+    font-size: 18px;
+   
+}
+
+.complaint-img{
+    height: 100px;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    width: 100px;
+
+}
+
+.complaint-data{
+    display: flex;
+    flex-direction: column;
+  
 }

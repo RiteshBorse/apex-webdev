@@ -26,7 +26,7 @@
     justify-content: center;
 }
 
-.Eventbox{
+.display-Event{
         display: flex;
         flex-direction:row;
         width: 80%;
@@ -42,14 +42,12 @@
 }
 .eventImg{
     height: 30px;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
+ 
     width: 30px;
 
 }
 
-.eventInfo{
+.event-data{
     
     display: flex;
     flex-direction: column;
@@ -59,16 +57,20 @@
 }
 
 
-.timeLoc{
+.time-Location{
     display: flex;
     flex-direction: row;
     color:#868484;
 }
 
-#eventName{
+.eventName{
     display: flex;
     font-size: 20px;
     align-items: end;
 
   
+}
+
+.eventLocation{
+    padding-left: 10px;
 }
