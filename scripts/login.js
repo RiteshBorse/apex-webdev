@@ -1,4 +1,4 @@
-import { readdata , response} from '../scripts/firebase.js';
+import { readdata , response , addComplaint} from '../scripts/firebase.js';
 
 document.querySelector('.js-login-button')
     .addEventListener(('click'), async () => {
@@ -25,7 +25,8 @@ document.querySelector('.js-login-button')
                 if (firebaseEnteredUser.username === enteredUser.inputUsername) {
                     if (firebaseEnteredUser.password === enteredUser.inputPassword) {
                         alert('Login Successful');
-                        window.location.href = 'home-u.html';
+                        localStorage.setItem('loggeduserdata' , JSON.stringify(firebaseEnteredUser));
+                         window.location.href = 'home-u.html';
                     }
                     else {
                         alert('Login Unsuccessful');
@@ -39,5 +40,7 @@ document.querySelector('.js-login-button')
                 alert('Login Unsuccessful');
             }
         }
+       
+        
     });
 

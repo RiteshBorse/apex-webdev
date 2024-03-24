@@ -1,12 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
 import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyDwISHPEBgBixOR9x5xSEdu7Fb5NpNtyQc",
     authDomain: "apex-webdev.firebaseapp.com",
@@ -23,10 +17,12 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase();
 
+//Function to register a user
 export async function writeUserData(username, newUser) {
     await set(ref(db, 'users/' + username), newUser);
 };
 
+//Funcion to read data of user
 export let response = '';
 export async function readdata(name) {
 
@@ -39,5 +35,18 @@ export async function readdata(name) {
         return '';
     }
 };
+
+//Function to add complaint 
+export async function addComplaint(complaint) {
+    let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+    console.log(data);
+    await set(ref(db , 'complaints/' + data.apartmentName) , 
+        {
+            complaint : complaint,
+            name : data.username
+        }
+    );
+}
+
 
 

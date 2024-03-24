@@ -1,4 +1,5 @@
 import { search } from '../scripts/utlis/fuse.js'
+import { addComplaint } from './firebase.js';
 document.querySelector('.js-document-wallet')
     .addEventListener(('click'), () => {
         document.querySelector('.js-features')
@@ -14,7 +15,7 @@ document.querySelector('.js-complaint-track')
             <div class="complaint-box">
                 <div class="complaint-input">
                     <div class="complaint-input-title">New Complaint</div>
-                    <input type="text" class="complaint-input-data"
+                    <input type="text" class="complaint-input-data js-complaint-input-data"
                         placeholder="Please provide detailed information about the complaint">
                     <style>
                         input[type="text"]::placeholder {
@@ -25,11 +26,18 @@ document.querySelector('.js-complaint-track')
 
                 </div>
                 <div class="complaint-button-div">
-                    <button class="complaint-button">Create New Complaint</button>
+                    <button class="complaint-button js-complaint-button">Create New Complaint</button>
                 </div>
             </div>
             `;
+        document.querySelector('.js-complaint-button')
+             .addEventListener(('click') , async () => {
+                 let complaint = document.querySelector('.js-complaint-input-data').value;
+                 addComplaint(complaint);
+     });
     });
+
+    
 
 
 document.querySelector('.js-ammenites-booking')
