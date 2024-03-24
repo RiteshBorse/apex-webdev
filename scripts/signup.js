@@ -1,4 +1,5 @@
 import { writeUserData } from '../scripts/firebase.js';
+import { generateApartId } from './utlis/apartid.js';
 
 document.querySelector('.js-signup-button')
     .addEventListener(("click") , async () => {
@@ -19,9 +20,11 @@ document.querySelector('.js-signup-button')
             password : document.querySelector('.js-set-password').value
         };
             await writeUserData(newUser.username ,newUser);
-            alert("User Registered");
-            window.location.href = 'index.html'
-
+            const id = generateApartId(0 , newUser);
+            document.querySelector('.js-right')
+                .innerHTML += `
+                <p class="alert">Apartment Registered Successfully <br> <span>1. Your Apartment ID is "${id}". <br>2. Now you can SignUp with Apartment ID.<br>3. Make sure to take screenshot as this ID can't be regenerated</span></p>
+                `;
 });
 
 

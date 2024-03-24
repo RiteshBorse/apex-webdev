@@ -1,6 +1,14 @@
-let detail = JSON.parse(localStorage.getItem('loggeduserdata'));
-export function generateApartId()
+let detail;
+export function generateApartId(choice , data)
 {
+    if(choice)
+    {
+        detail = JSON.parse(localStorage.getItem('loggeduserdata'));
+    }
+    else 
+    {
+        detail = data;
+    }
     let id;
     id = detail.country.charAt(0).toUpperCase();
     id += detail.state.charAt(0).toUpperCase();
@@ -28,8 +36,6 @@ export function generateApartId()
     }
 
     id += detail.pincode.slice(-1);
-    
-   
     return id;
 
 }

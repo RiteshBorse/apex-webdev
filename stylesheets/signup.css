@@ -97,6 +97,22 @@ p{
     margin-bottom: 10px;
 }
 
+.alert{
+    position: absolute;
+    top: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+    background-color: rgb(144, 248, 144);
+    color: darkgreen;
+    padding: 10px;
+    padding-inline: 25px;
+    border-radius: 10px;
+
+}
+
+.alert span {
+    font-size: 18px;
+}
 @media (max-width: 1423px) {
    
     .main {
@@ -243,5 +259,21 @@ p{
     align-items: center;
 }
 
+.alert{
+    width: 280px;
+    position: absolute;
+    top: 50px;
+    margin-top: 10px;
+    font-size: 18px;
+    background-color: rgb(144, 248, 144);
+    color: darkgreen;
+    padding: 10px;
+    padding-inline: 25px;
+    border-radius: 10px;
+
+}
+.alert span {
+    font-size: 13px;
+}
 }
 
