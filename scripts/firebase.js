@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
-import { getDatabase, ref, set, child, get } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+import { getDatabase, ref, set, child, get ,push} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+import { generateRandomNumber } from "./utlis/randomid.js";
 const firebaseConfig = {
     apiKey: "AIzaSyDwISHPEBgBixOR9x5xSEdu7Fb5NpNtyQc",
     authDomain: "apex-webdev.firebaseapp.com",
@@ -39,8 +40,8 @@ export async function registerMember(newUser) {
     if (snapshot.exists()) {
         await set(ref(db, `society/${newUser.apartmentId}/users/${newUser.username}`), newUser);
         return true;
-    }   
-    else{
+    }
+    else {
         return false;
     }
 };
@@ -61,14 +62,91 @@ export async function readdata(enteredUser) {
 //Function to add complaint 
 export async function addComplaint(complaint) {
     let data = JSON.parse(localStorage.getItem('loggeduserdata'));
-    console.log(data);
-    await set(ref(db , 'complaints/' + data.apartmentName) , 
+    let newId = generateRandomNumber();
+    console.log(newId);
+    await set(ref(db, `society/${data.apartmentId}/features/complaints/${newId}`),
         {
-            complaint : complaint,
-            name : data.username
+            name: data.firstName,
+            date : new Date().toDateString(),
+            complaint: complaint
         }
     );
 }
 
+//Function to read all complaint
+
+export async function readAllComplaint()
+{
+    let allComplaint;
+    let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef,`society/${data.apartmentId}/features/complaints/`))
+        .then((snapshot) => {
+            snapshot.forEach(element => {
+                allComplaint += `
+
+                <div class="complaint-list">
+              <div class="complaint-img">
+                  <img src="images/complaint.png">
+              </div>
+              <div class="complaint-data">
+                  <div class="user-complaint">${element.val().complaint}</div>
+                  <div class="Date-userName">
+                      <div class="date">${element.val().date}</div>
+                      <div>|</div>
+                  <div class="user-name">${element.val().name}</div>
+              </div>
+          </div>
+          </div>
+
+                `;
+            });
+            if(allComplaint)
+            {
+                document.querySelector('.js-features')
+                .innerHTML += allComplaint;
+            }
+        
+        })
+}
+/*
+
+const db = getDatabase();
+export let allData = '';
+let agg = 0;
+export async function readAllData() {
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef, "users/"))
+        .then((snapshot) => {
+            snapshot.forEach(element => {
+                allData += `
+          <div class="box">   
+    <p><span>Apartment Name:</span> ${element.val().apartmentName}</p>
+    <p><span>First Name:</span> ${element.val().firstName}</p>
+    <p><span>Middle Name:</span> ${element.val().middleName}</p>
+    <p><span>Surname:</span> ${element.val().surName}</p>
+    <p><span>Street:</span> ${element.val().street}</p>
+    <p><span>Pincode:</span> ${element.val().pincode}</p>
+    <p><span>Country:</span> ${element.val().country}</p>
+    <p><span>State:</span> ${element.val().state}</p>
+    <p><span>District:</span> ${element.val().district}</p>
+    <p><span>Number of Flats:</span> ${element.val().flats}</p>
+    <p><span>Number of Residents:</span> ${element.val().residents}</p>
+    <p><span>Number of Shops:</span> ${element.val().shops}</p>
+    <p><span>User Name:</span> ${element.val().username}</p>
+    <p><span>Password:</span> ${element.val().password}</p>
+</div>
+
+            `
+            });
+
+
+
+            document.querySelector('.js-content').innerHTML = allData;
+        })
+}
+*/
 
 

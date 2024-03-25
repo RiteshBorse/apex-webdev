@@ -1,6 +1,6 @@
 import { search } from '../scripts/utlis/fuse.js'
 import { complaint } from './feature-js/complaint.js';
-import { addComplaint } from './firebase.js';
+
 
 
 //Document Wallet
