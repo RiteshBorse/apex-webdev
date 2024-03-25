@@ -17,10 +17,35 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase();
 
-//Function to register a user
+/*
+copy of write function 
+
+calling : await writeUserData();
+
 export async function writeUserData(username, newUser) {
     await set(ref(db, 'users/' + username), newUser);
 };
+*/
+
+//Function to register a apartment
+export async function registerApartment(id, newApartment) {
+    await set(ref(db, `society/${id}/apartmentInfo/`), newApartment);
+};
+
+//Function to register a member of apartment
+export async function registerMember(newUser) {
+    const dbRef = ref(getDatabase());
+    const snapshot = await get(child(dbRef, `society/${newUser.apartmentId}`));
+    if (snapshot.exists()) {
+        await set(ref(db, `society/${newUser.apartmentId}/users/${newUser.firstName}`), newUser);
+        return true;
+    }   
+    else{
+        return false;
+    }
+};
+
+
 
 //Funcion to read data of user
 export let response = '';
