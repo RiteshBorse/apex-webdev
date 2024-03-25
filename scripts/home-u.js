@@ -1,5 +1,7 @@
 import { search } from '../scripts/utlis/fuse.js'
 import { addComplaint } from './firebase.js';
+
+//Document Wallet
 document.querySelector('.js-document-wallet')
     .addEventListener(('click'), () => {
         document.querySelector('.js-features')
@@ -7,6 +9,7 @@ document.querySelector('.js-document-wallet')
                 <p style=" color : red ; font-size : 45px; "> Document Wallet will be loaded Here</p>
             `;
     });
+//Complaint Tracking
 document.querySelector('.js-complaint-track')
     .addEventListener(('click'), () => {
         document.querySelector('.js-features')

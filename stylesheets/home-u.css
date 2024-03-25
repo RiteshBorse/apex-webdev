@@ -24,8 +24,8 @@
 }
 .navigation-bar{
     display: grid;
-    grid-template-columns: 5% 25% 50% 20%;
-    grid-template-areas: "image apex searchBar logIn-div";
+    grid-template-columns: 5% 15% 60% 20%;
+    grid-template-areas: "image apex search profile";
     align-items: center;
 
     justify-content:left;
@@ -62,8 +62,8 @@
 }
 
 .image{
-height: 40px;
-width: 40px;
+height: 30px;
+width: 20px;
 margin: 1%;
 padding-left: 30%;
 align-items: center;
@@ -78,8 +78,25 @@ justify-content: left;
 align-items: center;
 font-weight: 500;
 font-size:38px ;
-margin: 0%;
-    
+margin: 0%;  
+}
+
+.apex p{
+    height : auto;
+}
+
+.apex .logo-image{
+    height: 50px;
+width: 50px;
+margin: 1%;
+align-items: center;
+justify-content: left;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sidebar li{
     display: flex;
@@ -89,50 +106,45 @@ margin: 0%;
     font-size: 18px;
    align-items: center;
     height: auto;
-   justify-content: left;
-   margin-left: 15%;
+   justify-content: center;
    margin-top: 5%;
-
     transition: all 0.3s;
 }
 
 ul li:hover {
-    padding-left: 20px;
-    font-weight: 400;
+   
+    font-weight: 600;
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    align-items: center;
     
 }
 
-
-.logIn-div{
-    display : flex;
-    flex-direction: row;
+.profile{
+    display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: right;
-    margin-right: 10%;
-
+}
+.profile-user{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
+        width : 150px;
+        border: 1px solid black;
+        border-radius: 50px;
 }
 
-.button{
 
-  height: 60%;
-   width: 110px;
-   border: none;
-   
-    border-radius: 30px;
-    background-color:   rgb(240, 150, 123);;
-  
- 
-}
 
 .searchBar{
-
-   justify-content:center;
-   margin: 1%;
+    display: flex;
+   gap: 15px;
    height: auto;
-   width: 50%;
+   width: 75%;
    cursor: pointer;
-   margin-left: 60%;
-   margin-right: 10%;
    padding: 10px;
    align-items: center;
    background: #ffffff;

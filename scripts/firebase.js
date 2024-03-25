@@ -46,7 +46,6 @@ export async function registerMember(newUser) {
 };
 
 //Funcion to read data of user
-export let response = '';
 export async function readdata(enteredUser) {
 
     const dbRef = ref(getDatabase());

@@ -1,4 +1,4 @@
-import { readdata , response } from '../scripts/firebase.js';
+import { readdata  } from '../scripts/firebase.js';
 
 document.querySelector('.js-login-button')
     .addEventListener(('click'), async () => {
