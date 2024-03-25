@@ -1,4 +1,4 @@
-import { readdata , response , addComplaint} from '../scripts/firebase.js';
+import { readdata , response } from '../scripts/firebase.js';
 
 document.querySelector('.js-login-button')
     .addEventListener(('click'), async () => {
@@ -7,7 +7,6 @@ document.querySelector('.js-login-button')
             inputUsername: document.querySelector('.js-username').value,
             inputPassword: document.querySelector('.js-password').value
         };
-        readdata(enteredUser.inputUsername);
         let check = false;
         for (const key in enteredUser) {
             if (enteredUser[key] === '') {
@@ -19,26 +18,46 @@ document.querySelector('.js-login-button')
             alert('Enter all login details');
         }
         else {
-            await readdata(enteredUser.inputUsername);
-            const firebaseEnteredUser = await response;
-            if (firebaseEnteredUser.apartmentName === enteredUser.inputApartId) {
+            const firebaseEnteredUser = await readdata(enteredUser);
+            console.log(firebaseEnteredUser);
+            if (firebaseEnteredUser.apartmentId === enteredUser.inputApartId) {
                 if (firebaseEnteredUser.username === enteredUser.inputUsername) {
                     if (firebaseEnteredUser.password === enteredUser.inputPassword) {
-                        alert('Login Successful');
+                        document.querySelector('.js-right')
+                        .innerHTML += `
+                        <p class="alert">Login Successfully</p>
+                        `;
                         localStorage.setItem('loggeduserdata' , JSON.stringify(firebaseEnteredUser));
-                         window.location.href = 'home-u.html';
+                         setTimeout(() => {
+                            const alertElement = document.querySelector('.js-right .alert');
+                            if (alertElement) {
+                                alertElement.remove();
+                                window.location.href = 'home-u.html';
+                            }
+                        }, 1000);
+                        
                     }
                     else {
-                        alert('Login Unsuccessful');
+                        document.querySelector('.js-right')
+                        .innerHTML += `
+                        <p class="alert" style="background-color : red; color : darkred;">Login Failed</p>
+                        `;
                     }
                 }
                 else {
-                    alert('Login Unsuccessful');
+                    document.querySelector('.js-right')
+                    .innerHTML += `
+                    <p class="alert" style="background-color : red; color : darkred;">Login Failed</p>
+                    `;
                 }
             }
             else {
-                alert('Login Unsuccessful');
+                document.querySelector('.js-right')
+                .innerHTML += `
+                <p class="alert" style="background-color : red; color : darkred;">Login Failed</p>
+                `;
             }
+            
         }
        
         

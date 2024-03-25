@@ -37,7 +37,7 @@ export async function registerMember(newUser) {
     const dbRef = ref(getDatabase());
     const snapshot = await get(child(dbRef, `society/${newUser.apartmentId}`));
     if (snapshot.exists()) {
-        await set(ref(db, `society/${newUser.apartmentId}/users/${newUser.firstName}`), newUser);
+        await set(ref(db, `society/${newUser.apartmentId}/users/${newUser.username}`), newUser);
         return true;
     }   
     else{
@@ -45,17 +45,15 @@ export async function registerMember(newUser) {
     }
 };
 
-
-
 //Funcion to read data of user
 export let response = '';
-export async function readdata(name) {
+export async function readdata(enteredUser) {
 
     const dbRef = ref(getDatabase());
-    const snapshot = await get(child(dbRef, `users/${name}`));
+    const snapshot = await get(child(dbRef, `society/${enteredUser.inputApartId}/users/${enteredUser.inputUsername}`));
 
     if (snapshot.exists()) {
-        response = await snapshot.val();
+        return await snapshot.val();
     } else {
         return '';
     }
