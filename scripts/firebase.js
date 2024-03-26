@@ -31,8 +31,14 @@ export async function writeUserData(username, newUser) {
 //Function to register a apartment
 export async function registerApartment(id, newApartment) {
     await set(ref(db, `society/${id}/apartmentInfo/`), newApartment);
+    await appendApartmentID(id);
 };
-
+export async function appendApartmentID(id) {
+    await set(ref(db, `society/${id}/specialID/`), 
+    {
+        apartmentId : id
+    });
+};
 //Function to register a member of apartment
 export async function registerMember(newUser) {
     const dbRef = ref(getDatabase());
