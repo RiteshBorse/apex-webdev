@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Poppins;
+
+}
+
+.content {
+
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+}
+
+.amenitiesbooking {
+    height: 10%;
+    font-size: 30px;
+   margin:20px;
+    align-items: center;
+    justify-content: left;
+}
+
+
+.book-button{
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 10%;
+    margin-top: 20px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    font-family: Poppins;
+    justify-content: center;
+}
+
+.clubhouse {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 60%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding-left: 2%;
+    align-self: center;
+    box-sizing: border-box;
+    justify-content:center;
+    align-items:center;
+}
+
+.selection{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+   justify-content:center;
+   align-items:center;
+  
+}
+
+.selectionchild{
+    height:30%;
+    padding:10px;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    background-color: #F5F0EA;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    margin-left: 10px;
+    justify-content: center;
+    align-items:center;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    width:25%;
+    justify-content:center;
+   align-items:center;
+}
+
+.textchild{
+    height:30%;
+    padding:15px;
+    justify-content: center;
+    align-items:center;
+}
