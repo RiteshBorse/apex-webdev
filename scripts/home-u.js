@@ -2,7 +2,9 @@ import { search } from '../scripts/utlis/fuse.js'
 import { complaint } from './feature-js/complaint.js';
 
 
-
+let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+document.querySelector('.js-profile-user')
+    .innerHTML = `Hii , ${data.firstName}`;
 //Document Wallet
 document.querySelector('.js-document-wallet')
     .addEventListener(('click'), () => {

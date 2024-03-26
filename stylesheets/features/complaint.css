@@ -1,11 +1,23 @@
-.features {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #ffffff;
+
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Poppins;
+    
 }
 
-.title-complaint {
+.features{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+    
+}
+
+.complaint{
     height: 10%;
     font-size: 30px;
     margin: 2%;
@@ -13,52 +25,109 @@
     justify-content: center;
 }
 
-.complaint-box {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-    height: 12%;
-    background-color: #ffffff;
-    border: 2px solid #f1eded;
-    border-radius: 5px;
-    padding-left: 2%;
-    align-self: center;
-    box-sizing: border-box;
+.complaint-box{
+        display: flex;
+        flex-direction: row;
+        width: 80%;
+        height: 12%;
+        background-color: #ffffff; 
+        border: 2px solid #f1eded; 
+        border-radius: 5px; 
+        padding-left: 2%;
+        align-self: center;
+        box-sizing: border-box;
+        
 }
 
-.complaint-input {
+.complaint-input{
     width: 70%;
 }
 
-.complaint-input-title {
+.complaint-input-title{
+ 
     padding-top: 2%;
     padding-bottom: 0;
     height: auto;
     width: 800px;
+    font-weight: 400;
 }
 
-.complaint-input-data {
-    height: auto;
-    width: 70%;
-    padding-top: 0;
-    width: none;
-    border: none;
-    outline: none;
-    text-decoration: underline;
+.complaint-input-data{
+   height: auto;
+   width: 70%;
+   padding-top: 0;
+   width: none;
+   border: none;
+   outline: none;
+   text-decoration: underline;
 }
 
-.complaint-button {
+.complaint-button{
     width: 200px;
     display: flex;
     height: 30%;
     align-items: center;
     padding: 1%;
     justify-content: center;
+
+
 }
 
-.complaint-button-div {
+.complaint-button-div{
+  
     display: flex;
     width: auto;
     justify-self: center;
     align-items: center;
+}
+
+
+.complaint-list{
+    display: flex;
+    font-weight: 200;
+    flex-direction: row;
+    height: 50px;
+    width: 80%; 
+    margin-top: 50px;
+    padding-left: 2%;
+    align-self: center;
+    align-items: center;
+      
+        
+  
+}
+
+.Date-userName{
+    display: flex;
+    color: #707070; 
+    flex-direction: row;
+    height: 30px;
+    
+}
+.user-name{
+padding-left: 10px;
+}
+
+.date{
+    padding-right: 10px;
+}
+
+.user-complaint{
+    font-size: 18px;
+   
+}
+
+.complaint-img{
+    height: 100px;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    width: 100px;
+
+}
+
+.complaint-data{
+    display: flex;
+    flex-direction: column;
+  
 }
