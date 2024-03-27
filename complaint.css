@@ -20,32 +20,39 @@
 .complaint{
     height: 10%;
     font-size: 30px;
-    margin: 2%;
+    margin: 20px;
     align-items: center;
-    justify-content: center;
+    justify-self: center;
 }
 
 .complaint-box{
         display: flex;
         flex-direction: row;
         width: 80%;
-        height: 12%;
+        height: 80px;
+        margin: 10px;
         background-color: #ffffff; 
         border: 2px solid #f1eded; 
         border-radius: 5px; 
-        padding-left: 2%;
+    
         align-self: center;
         box-sizing: border-box;
         
 }
 
 .complaint-input{
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
     width: 70%;
 }
 
 .complaint-input-title{
  
-    padding-top: 2%;
+  
     padding-bottom: 0;
     height: auto;
     width: 800px;
@@ -55,7 +62,6 @@
 .complaint-input-data{
    height: auto;
    width: 70%;
-   padding-top: 0;
    width: none;
    border: none;
    outline: none;
@@ -65,7 +71,7 @@
 .complaint-button{
     width: 200px;
     display: flex;
-    height: 30%;
+    height: 20px;
     align-items: center;
     padding: 1%;
     justify-content: center;
@@ -84,50 +90,45 @@
 
 .complaint-list{
     display: flex;
-    font-weight: 200;
     flex-direction: row;
-    height: 50px;
-    width: 80%; 
-    margin-top: 50px;
-    padding-left: 2%;
-    align-self: center;
     align-items: center;
-      
-        
-  
-}
-
-.Date-userName{
-    display: flex;
-    color: #707070; 
-    flex-direction: row;
-    height: 30px;
-    
-}
-.user-name{
-padding-left: 10px;
-}
-
-.date{
-    padding-right: 10px;
-}
-
-.user-complaint{
-    font-size: 18px;
+    height: 80px;
+    width: 80%;
+    justify-content: flex-start;
+    align-self: center;
    
 }
 
 .complaint-img{
-    height: 100px;
-    align-items: center;
-    justify-self: center;
-    justify-content: center;
-    width: 100px;
-
+    height: 80px;
+    width: 80px;
 }
 
-.complaint-data{
+.user-info{
     display: flex;
     flex-direction: column;
+    width:80% ;
+    justify-content: center;
+}
+
+.user-complaint{
+    display: flex;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: 300;
   
+}
+
+.name-date{
+    display: flex;
+    color: #b0b0b0;
+    font-size: 14px;
+}
+
+.complaint-date{
+    padding-right: 2%;
+}
+
+.user-name{
+    padding-left: 2%;
 }
