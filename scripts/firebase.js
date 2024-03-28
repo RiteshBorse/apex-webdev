@@ -83,17 +83,36 @@ export async function addComplaint(complaint) {
 
 export async function readAllComplaint()
 {
-    let allComplaint = [];
+    let allComplaint = '';
     let data = JSON.parse(localStorage.getItem('loggeduserdata'));
     const db = getDatabase();
     const dbRef = ref(db);
     get(child(dbRef,`society/${data.apartmentId}/features/complaints/`))
         .then((snapshot) => {
             snapshot.forEach(element => {
-                let data = element.val();
-                allComplaint.push(data);
+                 allComplaint += `
+                <div class="complaint-list">
+                <img src="images/complaint.png" class="complaint-img">
+                <div class="user-info">
+                <div class="user-complaint">${element.val().complaint}</div>
+                <div class="name-date">
+                <div class="complaint-date">${element.val().date}</div>|
+                <div class="user-name">${element.val().name}</div>
+                </div>
+                </div>
+                </div>
+                `
             });
-            return allComplaint;
+            if(allComplaint)
+            {
+                document.querySelector('.js-display-complaint')
+                .innerHTML = allComplaint;
+            }
+            else {
+                document.querySelector('.js-display-complaint')
+                .innerHTML = '';
+            }
+           
         })
 }
 

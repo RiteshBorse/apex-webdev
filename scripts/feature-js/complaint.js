@@ -25,22 +25,17 @@ export function complaint() {
                 
                 
                     <div class="display-complaint js-display-complaint">
-                    <div class="complaint-list">
-                    <img src="images/complaint.png" class="complaint-img">
-                    <div class="user-info">
-                    <div class="user-complaint">User complaint</div>
-                    <div class="name-date">
-                    <div class="complaint-date">date</div>|
-                    <div class="user-name">User Name</div>
-                    </div>
-                    </div>
-                    </div>
+                        <div class="loader-with-sidebar"></div>
                      </div>
         
 `;
     document.querySelector('.js-complaint-button')
         .addEventListener(('click'), async () => {
-            addComplaint("ok fine");
+            let complaint = document.querySelector('.complaint-input-data').value;
+            addComplaint(complaint);
+            readAllComplaint();
+            document.querySelector('.complaint-input-data').value = '';
         });
+        readAllComplaint();
 }
 
