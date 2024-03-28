@@ -3,7 +3,7 @@ export function generateApartId(choice , data)
 {
     if(choice)
     {
-        detail = JSON.parse(localStorage.getItem('loggeduserdata'));
+        detail = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     }
     else 
     {

@@ -67,14 +67,15 @@ export async function readdata(enteredUser) {
 
 //Function to add complaint 
 export async function addComplaint(complaint) {
-    let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     let newId = generateRandomNumber();
     console.log(newId);
     await set(ref(db, `society/${data.apartmentId}/features/complaints/${newId}`),
         {
             name: data.firstName,
             date : new Date().toDateString(),
-            complaint: complaint
+            complaint: complaint,
+            status : '🔴 Not Resolved'
         }
     );
 }
@@ -84,7 +85,7 @@ export async function addComplaint(complaint) {
 export async function readAllComplaint()
 {
     let allComplaint = '';
-    let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     const db = getDatabase();
     const dbRef = ref(db);
     get(child(dbRef,`society/${data.apartmentId}/features/complaints/`))
@@ -98,6 +99,7 @@ export async function readAllComplaint()
                 <div class="name-date">
                 <div class="complaint-date">${element.val().date}</div>|
                 <div class="user-name">${element.val().name}</div>
+                <div class="complaint-status">${element.val().status}</div>
                 </div>
                 </div>
                 </div>

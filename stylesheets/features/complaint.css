@@ -155,3 +155,10 @@
     justify-content: center;
     justify-self: center;
 }
+
+.complaint-status{
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: red;
+}

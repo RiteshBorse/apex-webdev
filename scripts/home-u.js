@@ -1,10 +1,14 @@
 import { search } from '../scripts/utlis/fuse.js'
 import { complaint } from './feature-js/complaint.js';
+import { authenticate } from './utlis/check-auth.js';
 
+authenticate();
 
-let data = JSON.parse(localStorage.getItem('loggeduserdata'));
+let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
 document.querySelector('.js-profile-user')
     .innerHTML = `Hii , ${data.firstName}`;
+
+
 //Document Wallet
 document.querySelector('.js-document-wallet')
     .addEventListener(('click'), () => {

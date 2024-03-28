@@ -27,7 +27,7 @@ document.querySelector('.js-login-button')
                         .innerHTML += `
                         <p class="alert">Login Successfully</p>
                         `;
-                        localStorage.setItem('loggeduserdata' , JSON.stringify(firebaseEnteredUser));
+                        sessionStorage.setItem('loggeduserdata' , JSON.stringify(firebaseEnteredUser));
                          setTimeout(() => {
                             const alertElement = document.querySelector('.js-right .alert');
                             if (alertElement) {
