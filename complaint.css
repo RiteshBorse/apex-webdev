@@ -18,11 +18,18 @@
 }
 
 .complaint{
-    height: 10%;
-    font-size: 30px;
-    margin: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-self: center;
+    height:250px;
+}
+
+.complaint-title{
+    height: 70px;
+    font-size: 30px;
+    margin: 20px;
+    align-self: flex-start;
 }
 
 .complaint-box{
@@ -88,6 +95,13 @@
 }
 
 
+.display-complaint{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+
 .complaint-list{
     display: flex;
     flex-direction: row;
@@ -95,7 +109,7 @@
     height: 80px;
     width: 80%;
     justify-content: flex-start;
-    align-self: center;
+   
    
 }
 
@@ -131,4 +145,12 @@
 
 .user-name{
     padding-left: 2%;
+}
+
+.remark{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
 }
