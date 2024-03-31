@@ -1,6 +1,7 @@
 import { registerApartment } from '../scripts/firebase.js';
 import { generateApartId } from './utlis/apartid.js';
 
+//Input for registration of apartment
 document.querySelector('.js-signup-button')
     .addEventListener(("click") , async () => {
         const newApartment = {

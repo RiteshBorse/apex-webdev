@@ -1,5 +1,6 @@
 import Fuse from 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.mjs'
 
+//Fuse Library for search bar
 let features = [
     {
         fun: 'document-wallet'

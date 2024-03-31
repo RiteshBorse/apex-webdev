@@ -1,6 +1,7 @@
-let detail;
+//Generate new Apartment ID
 export function generateApartId(choice , data)
 {
+    let detail;
     if(choice)
     {
         detail = JSON.parse(sessionStorage.getItem('loggeduserdata'));

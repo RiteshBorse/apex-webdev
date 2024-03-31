@@ -1,5 +1,6 @@
 import { addComplaint, readAllComplaint } from "../firebase.js";
 
+//Function to create div for new complaint
 export function complaint() {
     document.querySelector('.js-features')
         .innerHTML = `

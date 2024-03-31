@@ -1,3 +1,5 @@
+//Generate Random ID for creating a new Complaint
+
 export function generateRandomNumber() {
     // Generate a random number between 0 and 9999999999 (inclusive)
     let randomNumber = Math.floor(Math.random() * 10000000000);

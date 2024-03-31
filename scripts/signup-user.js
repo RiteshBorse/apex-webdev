@@ -1,5 +1,6 @@
 import { registerMember } from '../scripts/firebase.js';
 
+//Input data from the user
 document.querySelector('.js-login-button')
  .addEventListener(('click') , async ()=> {
     const newUser = {
@@ -12,7 +13,7 @@ document.querySelector('.js-login-button')
         password : document.querySelector('.js-password').value
     
     };
-
+//Function to register a user
     let val = await registerMember(newUser);
     if(val)
     {
