@@ -102,6 +102,7 @@ export async function readAllComplaint()
                 <div class="complaint-status">${element.val().status}</div>
                 </div>
                 </div>
+                <div class="resolve">Resolve</div>
                 </div>
                 `
             });
