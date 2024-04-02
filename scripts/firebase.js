@@ -170,3 +170,15 @@ export async function readAllComplaint()
 }
 
 
+//Function to add annoucment 
+export async function addAnn(title , description) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let newId = generateRandomNumber();
+    await set(ref(db, `society/${data.apartmentId}/features/announcement/${newId}`),
+        {
+           title : title,
+           description : description
+        }
+    );
+}
+

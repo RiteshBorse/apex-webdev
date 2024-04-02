@@ -1,3 +1,5 @@
+import { addAnn } from "../firebase.js";
+
 export function annPost() {
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     document.querySelector('.js-features')
@@ -25,12 +27,19 @@ export function annPost() {
                 
         
         `;
-        console.log(data);
+
 
     if(data.post == 'Chairman') {
         document.querySelector('.announcement-create').classList.add('announcement-create-show');
-        const title = document.querySelector('.js-input-title').value;
-        const description = document.querySelector('.js-input-description').value;
-        //create ann
+
+        document.querySelector('.js-create-ann-button')
+            .addEventListener(('click') , async () => {
+                const title = document.querySelector('.js-input-title').value;
+                const description = document.querySelector('.js-input-description').value;
+                await addAnn(title , description);
+                document.querySelector('.js-input-title').value = '';
+                document.querySelector('.js-input-description').value = '';
+            })
+        
     }
 }
