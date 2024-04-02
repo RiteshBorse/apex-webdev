@@ -1,11 +1,11 @@
-import { addAnn } from "../firebase.js";
+import { addAnn, readAllAnn } from "../firebase.js";
 
 export function annPost() {
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     document.querySelector('.js-features')
         .innerHTML = `
-        <div class="announcement-create">
         <h1>Announcement Posts</h1>
+        <div class="announcement-create">
         <div class="ann-info">
             <div class="ann-input">
                 <input class="input-title js-input-title" type="text" placeholder="Add announcement title here">
@@ -17,12 +17,7 @@ export function annPost() {
        
     </div>
     <div class="announcement-list js-ann-list">
-        <div class="banner">
-            <div class="heading js-banner-heading">Title Appears Here</div>
-            <div class="description js-banner-description">
-                Description Appears Here
-            </div>
-        </div>
+    <div class="loader-with-sidebar"></div>
     </div>
                 
         
@@ -39,7 +34,10 @@ export function annPost() {
                 await addAnn(title , description);
                 document.querySelector('.js-input-title').value = '';
                 document.querySelector('.js-input-description').value = '';
+                readAllAnn();
             })
+
         
     }
+    readAllAnn();
 }

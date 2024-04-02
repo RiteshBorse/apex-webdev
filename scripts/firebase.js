@@ -182,3 +182,64 @@ export async function addAnn(title , description) {
     );
 }
 
+//Function to read annoucment
+export async function readAllAnn()
+{
+    let allAnn = '';
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef,`society/${data.apartmentId}/features/announcement/`))
+        .then((snapshot) => {
+            if(data.post == 'Chairman')
+            {
+                snapshot.forEach(element => {
+                    allAnn += `
+                   
+                    <div class="banner">
+                        <div class="heading js-banner-heading">${element.val().title}</div>
+                        <div class="description js-banner-description">
+                            ${element.val().description}
+                        </div>
+                    </div>
+               
+                     
+                    `
+                });
+            }
+            else {
+                snapshot.forEach(element => {
+                   allAnn += `
+                  
+                   <div class="banner">
+                       <div class="heading js-banner-heading">${element.val().title}</div>
+                       <div class="description js-banner-description">
+                           ${element.val().description}
+                       </div>
+                   </div>
+              
+                    
+                   `
+               });
+            }
+
+
+            if(allAnn)
+               { 
+                   document.querySelector('.js-ann-list')
+                   .innerHTML = allAnn;
+               }
+               else {
+                   document.querySelector('.js-ann-list')
+                   .innerHTML = '';
+               }
+
+          
+                    
+               
+           
+           
+        })
+}
+
+
