@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Poppins;
+
+}
+
+.features {
+
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    background-color: #ffffff;
+
+}
+
+.features h1 {
+    height: max-content;
+    align-self: flex-start;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.announcement-create {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    visibility: hidden;
+}
+
+.announcement-create-show{
+    position: static;
+    visibility: visible;
+}
+.ann-info{
+    display: flex;
+    margin-top: 20px;
+    gap: 20px;
+}
+.ann-input{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-title {
+    text-align: center;
+    height: max-content;
+    width: 500px;
+    padding: 10px;
+}
+
+.input-description{
+    text-align: center;
+    height: 100px;
+    width: 500px;
+    padding: 10px;
+}
+
+
+.announcement-button {
+    padding: 10px;
+    height: max-content;
+}
+.announcement-list{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.banner{
+    margin-top: 20px;
+    height: 200px;
+    width: 700px;
+    background-color: rgb(172, 241, 32);
+    border-radius: 30px;
+}
+.banner .heading{
+    font-weight: bold;
+    font-size: 20px;
+    height: max-content;
+    padding: 20px;
+}
+
+.banner .description{
+    height: max-content;
+    padding: 20px;
+}

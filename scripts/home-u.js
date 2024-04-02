@@ -1,4 +1,5 @@
 import { search } from '../scripts/utlis/fuse.js'
+import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
 import { residentDetails } from './feature-js/resident-details.js';
 import { authenticate } from './utlis/check-auth.js';
@@ -41,6 +42,14 @@ document.querySelector('.js-resident-details')
     .addEventListener(('click') , () => {
             residentDetails();
     });
+
+    //Announcment post on click
+    document.querySelector('.js-ann-post')
+    .addEventListener(('click') , () => {
+            annPost();
+    });
+
+
 
 //Using search bar for searching functions
 document.querySelector('.js-search-icon')
