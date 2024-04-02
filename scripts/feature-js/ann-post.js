@@ -1,7 +1,8 @@
 export function annPost() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     document.querySelector('.js-features')
         .innerHTML = `
-        <div class="announcement-create announcement-create-show">
+        <div class="announcement-create">
         <h1>Announcement Posts</h1>
         <div class="ann-info">
             <div class="ann-input">
@@ -24,4 +25,12 @@ export function annPost() {
                 
         
         `;
+        console.log(data);
+
+    if(data.post == 'Chairman') {
+        document.querySelector('.announcement-create').classList.add('announcement-create-show');
+        const title = document.querySelector('.js-input-title').value;
+        const description = document.querySelector('.js-input-description').value;
+        //create ann
+    }
 }
