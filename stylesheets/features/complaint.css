@@ -21,7 +21,12 @@
     flex-direction: column;
     align-items: center;
     justify-self: center;
-    height: 250px;
+    height: max-content;
+}
+
+.complaint-hide{
+    position: absolute;
+    visibility: hidden;
 }
 
 .complaint-title {

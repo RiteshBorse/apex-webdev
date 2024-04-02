@@ -4,9 +4,9 @@ import { addComplaint, readAllComplaint } from "../firebase.js";
 export function complaint() {
     document.querySelector('.js-features')
         .innerHTML = `
-
+        <div class="complaint-title">Complaints</div>
         <div class="complaint">
-              <div class="complaint-title">Complaints</div>
+              
                   <div class="complaint-box">
                   <div class="complaint-input">
                   <div class="complaint-input-title">New Complaint</div>
@@ -30,6 +30,10 @@ export function complaint() {
                      </div>
         
 `;
+let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+if(data.post == 'Chairman') {
+    document.querySelector('.complaint').classList.add('complaint-hide');
+}
     document.querySelector('.js-complaint-button')
         .addEventListener(('click'), async () => {
             let complaint = document.querySelector('.complaint-input-data').value;
