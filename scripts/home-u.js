@@ -1,5 +1,6 @@
 import { search } from '../scripts/utlis/fuse.js'
 import { complaint } from './feature-js/complaint.js';
+import { residentDetails } from './feature-js/resident-details.js';
 import { authenticate } from './utlis/check-auth.js';
 
 //Check if the user is logged in 
@@ -33,6 +34,12 @@ document.querySelector('.js-ammenites-booking')
             .innerHTML = `
                 <p style=" color : blue ; font-size : 45px; "> Ammenites booking will be loaded Here</p>
             `;
+    });
+
+//Resident details on click
+document.querySelector('.js-resident-details')
+    .addEventListener(('click') , () => {
+            residentDetails();
     });
 
 //Using search bar for searching functions
