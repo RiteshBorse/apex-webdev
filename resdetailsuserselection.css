@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Poppins;
+
+}
+
+.content {
+    background-color: #ffffff;
+
+}
+
+.resdetailsuser-title {
+    height: 70px;
+    font-size: 30px;
+    margin: 20px;
+    align-self: flex-start;
+}
+
+.curved-box {
+    width: 200px;
+    height: 250px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    margin: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+#Selfdetails{
+    background-image: url("selfdetails.webp");
+    background-size: cover;  
+    background-position: center;  
+}
+#Docs{
+    padding: 20px;
+    background-image: url("docs.jpg");
+    background-size: cover;  
+    background-position: center;  
+}

@@ -1,0 +1,83 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Poppins;
+    
+}
+
+.features{
+  background-color: #ffffff;
+    
+}
+
+.resdetailscm-title{
+    height: 70px;
+    font-size: 30px;
+    margin: 20px;
+    align-self: flex-start;
+}
+
+
+/*
+.display-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.details-template{
+    display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+   height: 25px;
+    width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
+    background-color: #F5F0EA;
+}
+
+.templateelement{
+    justify-content: center;
+    align-content: center;
+}
+
+.headtemplate{
+    font-size: larger;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+}
+*/
+
+
+
+
+table{
+    width:80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+}
+
+table,th,td{
+    text-align: center;
+    border: 1px solid #000;
+    border-collapse: collapse;
+}
+
+tr{
+    height: 25px;
+}
+
+tr:nth-child(odd) {
+    background-color:#F5F0EA; /* White for odd rows (default) */
+  }
+
+  th{
+   background-color:  rgb(240, 150, 123);
+  }
+
