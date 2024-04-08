@@ -26,7 +26,7 @@ export function complaint() {
                 
                 
                     <div class="display-complaint js-display-complaint">
-                        <div class="loader-with-sidebar"></div>
+                        <div class="loader"></div>
                      </div>
         
 `;

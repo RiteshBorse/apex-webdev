@@ -3,70 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="stylesheets/home-u.css">
     <link rel="stylesheet" href="stylesheets/features/ann-post.css">
     <link rel="stylesheet" href="stylesheets/features/complaint.css">
     <link rel="stylesheet" href="stylesheets/features/resident-details-c.css">
     <link rel="stylesheet" href="stylesheets/loader/loader.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <title>Document</title>
-
-
+    <link rel="stylesheet" href="stylesheets/home-u.css">
+    <title>Home</title>
 </head>
 <body>
-
-   <div class="page">
-
-      <div class="navigation-bar">
-         <div class="image"><img src="images/hamburger.png"></div>
-
-         <div class="apex">
-          <div class="logo-image"><img src="images/logo.png" ></div>
-          <p>Apex</p>
-         </div>
-      
-         <div class="search">
-          <div class="searchBar">
-            <i class="fas fa-search js-search-icon"></i>
-            <input type="text" placeholder="Search...." class="js-search-bar">
-           </div>
-         </div>
-        <div class="profile">
-          <div class="profile-user js-profile-user">Hi , Ritesh</div>
+    <nav class="sidebar">
+        <div class="sidebar-child">
+            <div class="sidebar-element-top apex-name-state">
+                <div><img class="logo" src="assets/logo.png" alt=""></div>
+                <p>Apex</p>
+                <i class="bi bi-list"></i>
+            </div>
+    
+            <div class="sidebar-element-mid">
+                <div class="search-div">
+                    <i class="bi bi-search js-search-icon"></i>
+                    <input class="search-bar js-search-bar" type="text" placeholder="Search...">
+                </div>
+               
+                <div class="mid-child js-document-wallet">
+                    <div><img class="icons" src="assets/icons8-document-50.png" alt=""></div>
+                     <div>Document Wallet</div>
+                </div>
+                <div class="mid-child js-complaint-track">
+                    <div><img class="icons" src="assets/icons8-complaint-50.png" alt=""></div>
+                     <div>Complaint Tracking</div>
+                </div>
+                <div class="mid-child js-ammenites-booking">
+                    <div><img class="icons" src="assets/icons8-hall-48.png" alt=""></div>
+                     <div>Ammenites Booking</div>
+                </div>
+                <div class="mid-child js-resident-details">
+                    <div><img class="icons" src="assets/icons8-caretaker-60.png" alt=""></div>
+                     <div>Resident Details</div>
+                </div>
+                <div class="mid-child js-vistor-entry">
+                    <div><img class="icons" src="assets/icons8-guest-50.png" alt=""></div>
+                     <div>Visitor Entry</div>
+                </div>
+                <div class="mid-child js-event-calender">
+                    <div><img class="icons" src="assets/icons8-event-50.png" alt=""></div>
+                     <div>Event Calender</div>
+                </div>
+                <div class="mid-child js-ann-post">
+                    <div><img class="icons" src="assets/icons8-46-66.png" alt=""></div>
+                     <div>Announcement Post</div>
+                </div>
+                <div class="mid-child js-community-event">
+                    <div><img class="icons" src="assets/icons8-people-50.png" alt=""></div>
+                     <div>Community Events</div>
+                </div>
+                
+            </div>
         </div>
-         
-     </div>
         
-      <div class="a">
-         
-          <div class="sidebar">
-          
-              <div class="message"> Message hub </div>
-             
-              <div class="parameters">
-                <ul>
-                    <li class="js-document-wallet">Document  Wallet</li> 
-                    <li class="js-complaint-track">Complaints  Tracking </l>
-                    <li class="js-ammenites-booking">Ammenites Booking</li>
-                    <li class="js-resident-details">Resident Details  </li>
-                    <li>Vistors Entry</li>
-                    <li>Survway</li>
-                    <li>Event Calendar</li>
-                    <li class="js-ann-post">Announcement post</li>
-                    <li>Community Events </li>
-                 </ul>
-              </div>
-          </div>
-          <div class="features js-features">
-            
-                         
-          </div>
-      </div>
-  </div>
-  <script src="scripts/home-u.js" type="module"></script>
+
+        <div class="sidebar-element-bottom">
+            <div class="user-element">
+                <div>
+                    <img src="assets/icons8-verified-user-96.png" alt="">
+                    <div class="user-name js-profile-user">Ritesh Borse <br> <span>Chairman</span></div>
+                    <button class="logout-button">Logout</button>
+                </div>
+                <div> 
+                    <img src="assets/icons8-tick-50.png" alt="">
+                    <p>Apex Verified User</p>
+                </div>
+            </div>
+            <div class="modes">
+                <div class="bottom-child light js-light">
+                    <div><img class="icons" src="assets/icons8-light-mode-78.png" alt=""></div>
+                    <div>Light</div>
+                </div>
+                <div class="bottom-child dark js-dark">
+                    <div><img class="icons" src="assets/icons8-dark-mode-50.png" alt=""></div>
+                    <div>Dark</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="main">
+       <div class="features js-features"></div>
+    </div>
+    <script>
+        const darkmode = document.querySelector('.js-dark');
+        darkmode.addEventListener(('click') , () => {
+            document.querySelector('.main').classList.add('main-dark');
+        });
+
+        const lightmode = document.querySelector('.js-light');
+        lightmode.addEventListener(('click') , () => {
+            document.querySelector('.main').classList.remove('main-dark');
+        });
+
+        const hamburger = document.querySelector('.bi-list');
+        hamburger.addEventListener('click' , () => {
+            document.querySelector('.sidebar').classList.toggle('sidebar-show');
+            document.querySelector('.bi-list').classList.toggle('bi-list-with-sidebar');
+            document.querySelector('.sidebar-element-top').classList.toggle('apex-name-state');
+        });
+    </script>
+    <script src="scripts/home-u.js" type="module"></script>
 </body>
 </html>

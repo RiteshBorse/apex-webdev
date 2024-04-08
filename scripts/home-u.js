@@ -9,8 +9,18 @@ authenticate();
 
 //Top right corner shows the name of the user logged in by this function
 let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
-document.querySelector('.js-profile-user')
-    .innerHTML = `Hii , ${data.firstName}`;
+document.querySelector('.user-element')
+    .innerHTML = ` 
+                 <div>
+                    <img src="assets/icons8-verified-user-96.png" alt="">
+                    <div class="user-name js-profile-user">${data.firstName} <br> <span>${data.post}</span></div>
+                    <button class="logout-button">Logout</button>
+                </div>
+                <div> 
+                    <img src="assets/icons8-tick-50.png" alt="">
+                    <p>Apex Verified User</p>
+                </div>
+`;
 
 
 //Document Wallet on click
