@@ -1,9 +1,9 @@
 .features {
 
-    display: grid;
-    grid-template-rows: 1fr 4fr;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     background-color: #ffffff;
-
 }
 
 .features h1 {
@@ -55,6 +55,11 @@
 
 
 .announcement-button {
+    background-color: black;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
     padding: 10px;
     height: max-content;
 }
@@ -68,10 +73,13 @@
 
 .banner{
     margin-top: 20px;
-    height: 200px;
-    width: 700px;
-    background-color: rgb(172, 241, 32);
-    border-radius: 30px;
+    background-color: violet;
+    border-radius: 20px;
+    width: 80%;
+    height: fit-content;
+    padding-left: 20px;
+    color: rgb(84, 0, 84);
+    box-shadow: 2px 2px 20px purple;
 }
 .banner .heading{
     font-weight: bold;
@@ -83,4 +91,47 @@
 .banner .description{
     height: max-content;
     padding: 20px;
+}
+
+
+/* MEDIA QUERIES*/
+@media (max-width : 430px)
+{
+    .ann-input{
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 200px;
+    }
+    .input-title {
+        text-align: center;
+        height: max-content;
+        width: 200px;
+        padding: 10px;
+    }
+    
+    .input-description{
+        text-align: center;
+        height: 100px;
+        width: 200px;
+        padding: 10px;
+        
+    }
+    .announcement-create {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        visibility: hidden;
+    }
+    .announcement-create-show{
+        position: static;
+        visibility: visible;
+    }
+    
 }

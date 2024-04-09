@@ -17,7 +17,7 @@ export function annPost() {
        
     </div>
     <div class="announcement-list js-ann-list">
-    <div class="loader-with-sidebar"></div>
+    <div class="loader"></div>
     </div>
                 
         
