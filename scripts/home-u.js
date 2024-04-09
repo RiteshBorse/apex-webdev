@@ -74,3 +74,10 @@ document.querySelector('.js-search-icon')
                 <p style=" color : blue ; font-size : 45px; "> ${item} will be loaded Here</p>
             `;
     });
+
+//Logout button
+const logoutbutton = document.querySelector('.logout-button');
+logoutbutton.addEventListener(('click') , ()=> {
+    sessionStorage.removeItem('loggeduserdata');
+    window.location.reload();
+});

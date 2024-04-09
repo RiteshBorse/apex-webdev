@@ -176,3 +176,126 @@
 .resolve-show {
     visibility: visible;
 }
+@media (max-width: 430px)
+{
+    .complaint-title {
+        height: max-content;
+        font-size: 30px;
+        margin: 20px;
+        align-self: flex-start;
+    }
+.complaint-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.complaint-input {
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+    width: 300px;
+}
+.complaint-input-title {
+    padding-bottom: 0;
+    height: auto;
+    font-weight: 400;
+}
+
+.complaint-input-data {
+    margin-top: 10px;
+    width: 300px;
+    text-wrap: wrap;
+    height: auto;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}
+.display-complaint {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.complaint-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: auto;
+    justify-content: flex-start;
+
+
+}
+
+.complaint-img {
+    height: 80px;
+    width: 80px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    justify-content: center;
+}
+
+.user-complaint {
+    display: flex;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: 300;
+
+}
+
+.name-date {
+    display: flex;
+    color: #b0b0b0;
+    font-size: 14px;
+    height: max-content;
+    text-wrap: nowrap;
+}
+
+.complaint-date {
+    padding-right: 2%;
+}
+
+.user-name {
+    padding-left: 2%;
+}
+
+.remark {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.complaint-status {
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: red;
+    height: max-content;
+    text-wrap: nowrap;
+}
+.complaint-status-resolve{
+    color : green;
+}
+
+.resolve {
+    position: absolute;
+    visibility: hidden;
+}
+
+}
