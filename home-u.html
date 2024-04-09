@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="stylesheets/features/ann-post.css">
     <link rel="stylesheet" href="stylesheets/features/complaint.css">
     <link rel="stylesheet" href="stylesheets/features/resident-details-c.css">
+    <link rel="stylesheet" href="stylesheets/loader/home-animation.css">
     <link rel="stylesheet" href="stylesheets/loader/loader.css">
     <link rel="stylesheet" href="stylesheets/home-u.css">
     <title>Home</title>
@@ -87,8 +88,11 @@
         </div>
     </nav>
     <div class="main">
-       <div class="features js-features"></div>
+       <div class="features js-features">
+            <h1 class="typed"><center>Welcome to Apex</center></h1>   
+       </div>
     </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
         const darkmode = document.querySelector('.js-dark');
         darkmode.addEventListener(('click') , () => {
@@ -106,6 +110,30 @@
             document.querySelector('.bi-list').classList.toggle('bi-list-with-sidebar');
             document.querySelector('.sidebar-element-top').classList.toggle('apex-name-state');
         });
+
+        var typed = new Typed('.typed', {
+  strings: [
+    "Welcome to Apex",
+    "Apex is here for you.",
+    "Manage your Apartment with ease",
+    "Streamline operations with modern technology",
+    "Convenient online payment portal",
+    "Effortlessly organize community events",
+    "Centralized communication hub for residents",
+    "Quickly submit and track maintenance requests",
+    "Secure document management system",
+    "Connect with neighbors via resident directory",
+    "Enhance security with visitor management tools",
+    "Access community management on the go with mobile app",
+    "Customize to fit your community's unique needs",
+    "Gain insights with analytics and reporting",
+    "Seamless integration with other software",
+    "Comprehensive support and training available",
+    "Ensure data security and privacy compliance"
+  ],
+  typeSpeed: 50
+});
+
     </script>
     <script src="scripts/home-u.js" type="module"></script>
 </body>

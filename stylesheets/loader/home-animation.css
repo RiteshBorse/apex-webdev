@@ -1,0 +1,27 @@
+.typed{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    animation: changeColor 5s infinite alternate;
+}
+
+@keyframes changeColor {
+    0% { color: red; }
+    10% { color: orange; }
+    20% { color: yellow; }
+    30% { color: green; }
+    40% { color: blue; }
+    50% { color: indigo; }
+    60% { color: violet; }
+    70% { color: purple; }
+    80% { color: pink; }
+    90% { color: brown; }
+    100% { color: black; }
+}
+
+@media (max-width : 430px){
+    .typed{
+        font-size: 40px;
+    }
+}
