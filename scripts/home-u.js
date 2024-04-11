@@ -1,6 +1,7 @@
 import { search } from '../scripts/utlis/fuse.js'
 import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
+import { documentWallet } from './feature-js/document-wallet.js';
 import { residentDetails } from './feature-js/resident-details.js';
 import { authenticate } from './utlis/check-auth.js';
 
@@ -30,6 +31,11 @@ document.querySelector('.js-document-wallet')
             .innerHTML = `
                 <p style=" color : red ; font-size : 45px; "> Document Wallet will be loaded Here</p>
             `;
+    });
+//Document Wallet on click
+document.querySelector('.js-document-wallet')
+    .addEventListener(('click') , () => {
+        documentWallet();
     });
 
 //Complaint Tracking on click

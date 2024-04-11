@@ -1,0 +1,143 @@
+
+.features{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+    
+      
+  }
+
+  .document-title{
+    margin-bottom: 10px;
+  }
+
+  .document{
+    position : absolute;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    height: max-content;
+}
+
+.document-list{
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self:center ;
+}
+  
+
+  .docWallet-title{
+    height: 70px;
+    font-size: 30px;
+    margin-top: 25px;
+     margin-left: 30px;
+    align-self: flex-start;
+  }
+
+.document-1 , .document-2  ,.document-3 , .document-4{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  margin: 10px;
+  background-color: #ffffff;
+  border: 2px solid #f1eded;
+  border-radius: 5px;
+
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.wallet-input{
+  display: flex;
+  padding: 2%;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  justify-self: center;
+  width: 70%;
+}
+.submit{
+    width: 100px;
+    display: flex;
+    height: 25px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    align-self: center;
+    background-color: rgb(74, 72, 72);
+    color: #f1eded;
+    
+}
+
+
+@media (max-width: 430px){
+.features{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ffffff;
+      
+  }
+
+  .document{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    height:100%;
+    width: 100%;
+  }
+
+  .docWallet-title{
+    height: 40px;
+    font-size: 24px;
+    margin: 10px;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+
+.document-1 , .document-2  ,.document-3 , .document-4{
+    display: flex;
+    flex-direction: row;
+    width: 350px;
+    height: 80px;
+    margin: 10px;
+    margin-top: 20px;
+    background-color: #ffffff;  
+    border: 2px solid #f1eded; 
+    border-radius: 5px; 
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+}
+
+.wallet-input{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+.submit{
+    width: 80px;
+    display: flex;
+    height: 25px;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: center;
+    align-self: center;
+    background-color: rgb(74, 72, 72);
+    color: #f1eded;
+   
+    
+}
+.document-list{
+  width: max-content;
+}
+
+}
