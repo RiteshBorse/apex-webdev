@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
-import { getDatabase, ref, set, child, get ,push , update} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+import { getDatabase, ref, set, child, get ,push , update , remove} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 import { generateRandomNumber } from "./utlis/randomid.js";
 
 const firebaseConfig = {
@@ -240,7 +240,7 @@ export async function addGuest(username , guest , time) {
     );
 }
 
-//Function to read annoucment
+//Function to read visitor-entry
 export async function readallGuest()
 {
     let allGuest = '';
@@ -273,3 +273,9 @@ export async function readallGuest()
         });
       
 }
+
+//Function to remove the delete all the visitor entries
+export async function deleteVisitorEntry() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    await remove(ref(db, `society/${data.apartmentId}/features/visitor-entry`));
+};

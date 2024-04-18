@@ -1,14 +1,15 @@
-import { addGuest, readallGuest } from "../firebase.js";
+import { addGuest, deleteVisitorEntry, readallGuest } from "../firebase.js";
 
 export function visitorEntry() {
     document.querySelector('.js-features')
         .innerHTML = `
             <div class="visitors">
+            <button class="js-delete delete">Delete Data</button>
             <h1 class="visitor-entry-h1">Visitor Entry</h1>
             <div class="add-guest-card hidden">
                 <p>Add the guest</p>
                 <input class="name-guest js-name-guest" type="text" placeholder="Enter Name of Guest">
-                <input class="time-guest js-time-guest" type="text" placeholder="Enter time">
+                <input class="time-guest js-time-guest" type="time" placeholder="Enter time">
                 <button class="notify-guard-button">Notify Security Guard</button>
             </div>
             <div class="add-guest">
@@ -33,6 +34,12 @@ export function visitorEntry() {
             guest.value = '';
             time.value = '';
             document.querySelector('.add-guest-card').classList.toggle('hidden');
+            readallGuest();
+        });
+
+    document.querySelector('.js-delete')
+        .addEventListener(('click') , ()=> {
+            deleteVisitorEntry();
             readallGuest();
         });
 }
