@@ -242,4 +242,15 @@ export async function readAllAnn()
         })
 }
 
-
+//Function to add guest
+export async function addGuest(username , guest , time) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let newId = generateRandomNumber();
+    await set(ref(db, `society/${data.apartmentId}/features/visitor-entry/${newId}`),
+        {
+           username : username,
+           guest : guest,
+           time : time
+        }
+    );
+}

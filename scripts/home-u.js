@@ -3,6 +3,7 @@ import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
 import { documentWallet } from './feature-js/document-wallet.js';
 import { residentDetails } from './feature-js/resident-details.js';
+import { visitorEntry } from './feature-js/vistor-entry.js';
 import { authenticate } from './utlis/check-auth.js';
 
 //Check if the user is logged in 
@@ -59,12 +60,17 @@ document.querySelector('.js-resident-details')
             residentDetails();
     });
 
-    //Announcment post on click
+//Announcment post on click
     document.querySelector('.js-ann-post')
     .addEventListener(('click') , () => {
             annPost();
     });
 
+//Visitor Entry on click
+document.querySelector('.js-vistor-entry')
+    .addEventListener(('click') , ()=> {
+        visitorEntry();
+    });
 
 
 //Using search bar for searching functions
