@@ -102,9 +102,10 @@ p:hover {
     position: absolute;
     top: 20px;
     margin-top: 10px;
-    font-size: 24px;
-    background-color: rgb(144, 248, 144);
-    color: darkgreen;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: rgb(1, 154, 1);
+    color: white;
     padding: 10px;
     padding-inline: 25px;
     border-radius: 10px;

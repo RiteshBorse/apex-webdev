@@ -1,4 +1,4 @@
-import { addGuest } from "../firebase.js";
+import { addGuest, readallGuest } from "../firebase.js";
 
 export function visitorEntry() {
     document.querySelector('.js-features')
@@ -14,8 +14,12 @@ export function visitorEntry() {
             <div class="add-guest">
                 <button>+</button>
             </div> 
+            <div class="visitor-list js-visitor-list">
+            <div class="loader"></div>
+            <div>
         `;
         let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+        readallGuest();
     document.querySelector('.add-guest')
         .addEventListener(('click') , () => {
             document.querySelector('.add-guest-card').classList.toggle('hidden');
@@ -23,8 +27,12 @@ export function visitorEntry() {
 
     document.querySelector('.notify-guard-button') 
         .addEventListener(('click') , () => {
-            const guest = document.querySelector('.js-name-guest').value;
-            const time = document.querySelector('.js-time-guest').value;
-            addGuest(data.username ,guest , time);
+            const guest = document.querySelector('.js-name-guest');
+            const time = document.querySelector('.js-time-guest');
+            addGuest(data.username ,guest.value , time.value);
+            guest.value = '';
+            time.value = '';
+            document.querySelector('.add-guest-card').classList.toggle('hidden');
+            readallGuest();
         });
 }

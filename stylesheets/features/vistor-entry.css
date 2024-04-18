@@ -9,6 +9,10 @@
 .visitor-entry-h1{
     font-size: 40px;
 }
+
+.visitor-child{
+    margin-top: 20px;
+}
 .add-guest{
     display: grid;
     place-items: center;

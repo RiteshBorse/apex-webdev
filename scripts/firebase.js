@@ -239,3 +239,37 @@ export async function addGuest(username , guest , time) {
         }
     );
 }
+
+//Function to read annoucment
+export async function readallGuest()
+{
+    let allGuest = '';
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef,`society/${data.apartmentId}/features/visitor-entry/`))
+        .then((snapshot) => {
+            
+                snapshot.forEach(element => {
+                    if(data.username === element.val().username)
+                     {
+                        allGuest += `
+                   
+                        <div class="visitor-child">
+                        <p>Name of Visitor : ${element.val().guest}</p>
+                        <p>Time of Visitor : ${element.val().time}</p>
+                        <div>
+                     
+                    `;
+                }
+                });
+                if(allGuest) {
+                    document.querySelector('.js-visitor-list').innerHTML = allGuest;
+                }
+                else {
+                    document.querySelector('.js-visitor-list').innerHTML = '';
+                }
+                
+        });
+      
+}
