@@ -55,7 +55,6 @@ export async function registerMember(newUser) {
 
 //Funcion to read data of user
 export async function readdata(enteredUser) {
-
     const dbRef = ref(getDatabase());
     const snapshot = await get(child(dbRef, `society/${enteredUser.inputApartId}/users/${enteredUser.inputUsername}`));
 
@@ -93,7 +92,6 @@ export async function resolveComplaint(id) {
 }
 
 //Function to read all complaint
-
 export async function readAllComplaint()
 {
     let allComplaint = '';
@@ -105,8 +103,7 @@ export async function readAllComplaint()
             if(data.post == 'Chairman')
             {
                 snapshot.forEach(element => {
-
-                    const status = element.val().status;
+                const status = element.val().status;
                 const statusColor = status === '🔴 Not Resolved' ? 'red' : 'green';
 
                     allComplaint += `
@@ -145,8 +142,6 @@ export async function readAllComplaint()
                    `
                });
             }
-
-
             if(allComplaint)
                { 
                    document.querySelector('.js-display-complaint')
@@ -163,9 +158,7 @@ export async function readAllComplaint()
                         const element = button.dataset.id;
                         resolveComplaint(element);
                     });
-                })
-           
-           
+                })          
         })
 }
 
@@ -222,8 +215,6 @@ export async function readAllAnn()
                    `
                });
             }
-
-
             if(allAnn)
                { 
                    document.querySelector('.js-ann-list')
@@ -233,12 +224,6 @@ export async function readAllAnn()
                    document.querySelector('.js-ann-list')
                    .innerHTML = '';
                }
-
-          
-                    
-               
-           
-           
         })
 }
 
