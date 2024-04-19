@@ -24,6 +24,26 @@ document.querySelector('.user-element')
                 </div>
 `;
 
+//Check if the user is security guard
+if(data.post == 'Security Guard')
+{
+    document.querySelector('.sidebar-element-mid')
+        .innerHTML = `
+        
+        <div class="mid-child js-vistor-entry">
+                    <div><img class="icons" src="assets/icons8-guest-50.png" alt=""></div>
+                     <div>Visitor Entry</div>
+                </div>
+        
+        `;
+    
+    //Visitor Entry on click
+    document.querySelector('.js-vistor-entry')
+    .addEventListener(('click') , ()=> {
+        visitorEntry();
+});
+}
+else{
 
 //Document Wallet on click
 document.querySelector('.js-document-wallet')
@@ -86,6 +106,7 @@ document.querySelector('.js-search-icon')
                 <p style=" color : blue ; font-size : 45px; "> ${item} will be loaded Here</p>
             `;
     });
+} 
 
 //Logout button
 const logoutbutton = document.querySelector('.logout-button');
