@@ -347,3 +347,44 @@ export async function updateEntry(id) {
     );
     readAllGuest();
 }
+
+//Function to add event
+export async function addEvent(event , dateTime , location) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let newId = generateRandomNumber();
+    await set(ref(db, `society/${data.apartmentId}/features/event-calender/${newId}`),
+        {
+           event : event,
+           dateTime : dateTime,
+           location : location
+        }
+    );
+}
+//Function to read all events
+export async function readAllEvents()
+{
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let allEvent = '';
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef,`society/${data.apartmentId}/features/event-calender/`))
+        .then((snapshot) => {
+            
+                snapshot.forEach(element => {
+                        allEvent += `
+                        <div class="event">
+                            <p>Name of Event : ${element.val().event}</p>
+                            <p>Location : ${element.val().location}</p>
+                            <p>Date and Time : ${element.val().dateTime}</p>
+                        </div>
+                    `;
+                });
+                if(allEvent) {
+                    document.querySelector('.js-event-list').innerHTML = allEvent;
+                }
+                else {
+                    document.querySelector('.js-event-list').innerHTML = '';
+                } 
+        });    
+
+}

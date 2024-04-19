@@ -1,0 +1,21 @@
+.event-card{
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+.event{
+    margin-top: 30px;
+}
+.add-event{
+    position: absolute;
+    bottom: 30px;
+    right: 30px; 
+    padding: 10px;
+    font-size: 30px;
+}
+.hidden{
+    visibility: hidden;
+}

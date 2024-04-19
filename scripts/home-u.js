@@ -2,6 +2,7 @@ import { search } from '../scripts/utlis/fuse.js'
 import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
 import { documentWallet } from './feature-js/document-wallet.js';
+import { eventCalender } from './feature-js/event-calender.js';
 import { residentDetails } from './feature-js/resident-details.js';
 import { visitorEntry } from './feature-js/vistor-entry.js';
 import { authenticate } from './utlis/check-auth.js';
@@ -91,6 +92,12 @@ document.querySelector('.js-vistor-entry')
     .addEventListener(('click') , ()=> {
         visitorEntry();
     });
+
+//Event Calender on click
+document.querySelector('.js-event-calender')
+    .addEventListener(('click') , ()=> {
+        eventCalender();
+});
 
 
 //Using search bar for searching functions
