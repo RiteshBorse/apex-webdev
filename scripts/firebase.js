@@ -253,7 +253,7 @@ export async function readmyGuest()
         .then((snapshot) => {
             
                 snapshot.forEach(element => {
-                    if(data.username === element.val().username)
+                    if(data.username === element.val().username || data.firstName === element.val().name)
                      {
                         allGuest += `
                    
