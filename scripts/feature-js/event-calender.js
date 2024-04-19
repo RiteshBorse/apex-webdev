@@ -1,6 +1,9 @@
 import { addEvent, readAllEvents } from "../firebase.js";
 
 export function eventCalender() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    if(data.post == 'Chairman')
+    {
         document.querySelector('.js-features')
             .innerHTML = `
                 <div class="events">
@@ -35,4 +38,21 @@ export function eventCalender() {
                     document.querySelector('.event-card').classList.toggle('hidden');
                     readAllEvents();
                 });
+   } 
+   else {
+    document.querySelector('.js-features')
+    .innerHTML = `
+        <div class="events">
+            <h1>Event Calender</h1>
+            <div class="event-list js-event-list">
+                <div class="event">
+                    <p>Name of Event</p>
+                    <p>Location</p>
+                    <p>Date and Time</p>
+                </div>
+            </div>
+        </div>
+    `;
+    readAllEvents();
+   }           
 }
