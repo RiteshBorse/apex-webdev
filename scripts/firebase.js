@@ -228,20 +228,22 @@ export async function readAllAnn()
 }
 
 //Function to add guest
-export async function addGuest(username , guest , time) {
+export async function addGuest(guest , time) {
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     let newId = generateRandomNumber();
     await set(ref(db, `society/${data.apartmentId}/features/visitor-entry/${newId}`),
         {
-           username : username,
+           name : data.firstName,
+           username : data.username,
            guest : guest,
-           time : time
+           time : time,
+           entry : '-'
         }
     );
 }
 
-//Function to read visitor-entry
-export async function readallGuest()
+//Function to read specific  visitor-entry
+export async function readmyGuest()
 {
     let allGuest = '';
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
@@ -279,3 +281,69 @@ export async function deleteVisitorEntry() {
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     await remove(ref(db, `society/${data.apartmentId}/features/visitor-entry`));
 };
+
+//Function to read all the Visitors for Security Guard
+export async function readAllGuest()
+{
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let allGuest = '';
+    const db = getDatabase();
+    const dbRef = ref(db);
+    let time = new Date().toLocaleString();
+    get(child(dbRef,`society/${data.apartmentId}/features/visitor-entry/`))
+        .then((snapshot) => {
+            
+                snapshot.forEach(element => {
+                        allGuest += `
+                        <div class="visitor-child">
+                        <p>Resident : ${element.val().name}</p>
+                        <p>Name of Guest : ${element.val().guest}</p>
+                        <p>Expected Arival Time: ${element.val().time}</p>
+                        <p>Entry Time : ${element.val().entry}</p>
+                        <button class="entry-time" data-id="${element.key}">Approve</button>
+                    `;
+                });
+                if(allGuest) {
+                    document.querySelector('.js-visitor-list').innerHTML = allGuest;
+                }
+                else {
+                    document.querySelector('.js-visitor-list').innerHTML = '';
+                }
+                
+                document.querySelectorAll('.entry-time')
+                .forEach((button) => {
+                    button.addEventListener(('click') , () => {
+                        const element = button.dataset.id;
+                          console.log(element);
+                          updateEntry(element);
+                      
+                    });
+                })    
+        });    
+
+}
+//Function to add guest
+export async function addNewGuest( resident,  guest , time) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let newId = generateRandomNumber();
+    await set(ref(db, `society/${data.apartmentId}/features/visitor-entry/${newId}`),
+        {
+           name : resident,
+           guest : guest,
+           time : time,
+           entry : time
+        }
+    );
+}
+
+//Function to update entry time
+export async function updateEntry(id) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let time = new Date().toLocaleString();
+    update(ref(db, `society/${data.apartmentId}/features/visitor-entry/${id}`),
+        {
+            entry : time
+        }
+    );
+    readAllGuest();
+}
