@@ -3,6 +3,7 @@ import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
 import { documentWallet } from './feature-js/document-wallet.js';
 import { eventCalender } from './feature-js/event-calender.js';
+import { expenses } from './feature-js/expenses.js';
 import { residentDetails } from './feature-js/resident-details.js';
 import { visitorEntry } from './feature-js/vistor-entry.js';
 import { authenticate } from './utlis/check-auth.js';
@@ -98,6 +99,12 @@ document.querySelector('.js-event-calender')
     .addEventListener(('click') , ()=> {
         eventCalender();
 });
+
+//Expenses on click
+document.querySelector('.js-expenses')
+    .addEventListener(('click') , ()=>{
+        expenses();
+    });
 
 
 //Using search bar for searching functions

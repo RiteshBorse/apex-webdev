@@ -1,0 +1,18 @@
+.wallet{
+    display: flex;
+    flex-direction: column;
+}
+.wallet-balance{
+    position: absolute;
+    right: 20px;
+}
+.maintenace-list{
+    display: flex;
+    flex-direction: column;
+}
+.pay-maintenance{
+    margin-top: 20px;
+}
+.hidden{
+    visibility: hidden;
+}
