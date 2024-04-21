@@ -9,6 +9,9 @@
 .maintenace-list{
     display: flex;
     flex-direction: column;
+    height: 70vh;
+    width: max-content;
+    overflow: auto;
 }
 .pay-maintenance{
     margin-top: 20px;

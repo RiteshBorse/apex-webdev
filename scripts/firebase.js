@@ -388,3 +388,74 @@ export async function readAllEvents()
         });    
 
 }
+
+//Function to add the maintenace amount
+export async function addMaintenaceAmt(maintenanceAmt) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    await set(ref(db, `society/${data.apartmentId}/features/expenses/maintenance/maintenance-amount`),
+    {
+        amount : maintenanceAmt
+    }
+    );
+}
+
+//Function to read the maintenance amount
+export async function readMaintenanceAmount() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const dbRef = ref(getDatabase());
+    const snapshot = await get(child(dbRef, `society/${data.apartmentId}/features/expenses/maintenance/maintenance-amount`));
+
+    if (snapshot.exists()) {
+        return await snapshot.val();
+    } else {
+        return '';
+    }
+};
+
+//Function to add the apex wallet to database
+export async function apexWallet(amount) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    await set(ref(db, `society/${data.apartmentId}/features/expenses/maintenance/wallet/${data.username}`),
+    {
+        amount : amount
+    }
+    );
+}
+
+//Function to read the maintenance amount
+export async function readApexWallet() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const dbRef = ref(getDatabase());
+    const snapshot = await get(child(dbRef, `society/${data.apartmentId}/features/expenses/maintenance/wallet/${data.username}`));
+
+    if (snapshot.exists()) {
+        return await snapshot.val();
+    } else {
+        return '';
+    }
+};
+
+//Function to add maintenance fund to society fund
+export async function addsocietyFund(amount) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    await set(ref(db, `society/${data.apartmentId}/features/expenses/maintenance/society-fund/`),
+    {
+        amount : amount
+    }
+    );
+}
+
+//Function to read the society fund
+export async function readSocietyFund() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const dbRef = ref(getDatabase());
+    const snapshot = await get(child(dbRef, `society/${data.apartmentId}/features/expenses/maintenance/society-fund`));
+
+    if (snapshot.exists()) {
+        return await snapshot.val();
+    } else {
+        return '';
+    }
+};
+
+
