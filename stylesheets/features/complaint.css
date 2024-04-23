@@ -173,6 +173,11 @@
     border-radius: 8px;
     visibility: hidden;
 }
+.is-resolved{
+    background-color: white;
+    color: green;
+    border : 1px solid green;
+}
 .resolve-show {
     visibility: visible;
 }

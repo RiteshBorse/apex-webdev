@@ -105,21 +105,41 @@ export async function readAllComplaint()
                 snapshot.forEach(element => {
                 const status = element.val().status;
                 const statusColor = status === '🔴 Not Resolved' ? 'red' : 'green';
-
+                if(status == "✅ Resolved")
+                {
                     allComplaint += `
-                   <div class="complaint-list">
-                   <img src="images/complaint.png" class="complaint-img">
-                   <div class="user-info">
-                   <div class="user-complaint">${element.val().complaint}</div>
-                   <div class="name-date">
-                   <div class="complaint-date">${element.val().date}</div>|
-                   <div class="user-name">${element.val().name}</div>
-                   <div class="complaint-status" style="color: ${statusColor};">${status} </div>
-                   </div>
-                   </div>
-                   <div class="resolve resolve-show js-resolve" data-id="${element.key}" >Resolve</div>
-                   </div>
-                   `
+                    <div class="complaint-list">
+                    <img src="images/complaint.png" class="complaint-img">
+                    <div class="user-info">
+                    <div class="user-complaint">${element.val().complaint}</div>
+                    <div class="name-date">
+                    <div class="complaint-date">${element.val().date}</div>|
+                    <div class="user-name">${element.val().name}</div>
+                    <div class="complaint-status" style="color: ${statusColor};">${status} </div>
+                    </div>
+                    </div>
+                    <div class="resolve resolve-show is-resolved js-resolve" data-id="${element.key}" >Resolved</div>
+                    </div>
+                    `
+                }
+                else{
+                    allComplaint += `
+                    <div class="complaint-list">
+                    <img src="images/complaint.png" class="complaint-img">
+                    <div class="user-info">
+                    <div class="user-complaint">${element.val().complaint}</div>
+                    <div class="name-date">
+                    <div class="complaint-date">${element.val().date}</div>|
+                    <div class="user-name">${element.val().name}</div>
+                    <div class="complaint-status" style="color: ${statusColor};">${status} </div>
+                    </div>
+                    </div>
+                    <div class="resolve resolve-show js-resolve" data-id="${element.key}" >Resolve</div>
+                    </div>
+                    `
+                }
+
+                   
                });
             }
             else {
@@ -472,4 +492,4 @@ export async function readSocietyFund() {
         return '';
     }
 };
-//function
+
