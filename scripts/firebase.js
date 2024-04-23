@@ -279,9 +279,9 @@ export async function readmyGuest()
                         allGuest += `
                    
                         <div class="visitor-child">
-                        <p>Name of Visitor : ${element.val().guest}</p>
-                        <p>Time of Visitor : ${element.val().time}</p>
-                        <div>
+                            <p>Name of Visitor : ${element.val().guest}</p>
+                            <p>Time of Visitor : ${element.val().time}</p>
+                        </div>
                      
                     `;
                 }
@@ -319,21 +319,23 @@ export async function readAllGuest()
                     {
                         allGuest += `
                         <div class="visitor-child">
-                        <p>Resident : ${element.val().name}</p>
-                        <p>Name of Guest : ${element.val().guest}</p>
-                        <p>Expected Arival Time: ${element.val().time}</p>
-                        <p>Entry Time : ${element.val().entry}</p>
-                        <button class="entry-time is-approved" data-id="${element.key}">Approved</button>
+                            <p>Resident : ${element.val().name}</p>
+                            <p>Name of Guest : ${element.val().guest}</p>
+                            <p>Expected Arival Time: ${element.val().time}</p>
+                            <p>Entry Time : ${element.val().entry}</p>
+                            <button class="entry-time is-approved" data-id="${element.key}">Approved</button>
+                        </div>
                     `;
                     }
                     else{
                         allGuest += `
                         <div class="visitor-child">
-                        <p>Resident : ${element.val().name}</p>
-                        <p>Name of Guest : ${element.val().guest}</p>
-                        <p>Expected Arival Time: ${element.val().time}</p>
-                        <p>Entry Time : ${element.val().entry}</p>
-                        <button class="entry-time" data-id="${element.key}">Approve</button>
+                            <p>Resident : ${element.val().name}</p>
+                            <p>Name of Guest : ${element.val().guest}</p>
+                            <p>Expected Arival Time: ${element.val().time}</p>
+                            <p>Entry Time : ${element.val().entry}</p>
+                            <button class="entry-time" data-id="${element.key}">Approve</button>
+                        </div>
                     `;
                     }
                 });

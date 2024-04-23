@@ -20,7 +20,7 @@ export function visitorEntry() {
                         <div class="visitor-list js-visitor-list">
                             <div class="loader"></div>
                         </div>
-                <div>
+                </div>
             `;
             readmyGuest();
         document.querySelector('.add-guest')
