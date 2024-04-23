@@ -237,7 +237,8 @@ export async function addGuest(guest , time) {
            username : data.username,
            guest : guest,
            time : time,
-           entry : '-'
+           entry : '-',
+           status : 'unapprove'
         }
     );
 }
@@ -294,6 +295,18 @@ export async function readAllGuest()
         .then((snapshot) => {
             
                 snapshot.forEach(element => {
+                    if(element.val().status == 'approve')
+                    {
+                        allGuest += `
+                        <div class="visitor-child">
+                        <p>Resident : ${element.val().name}</p>
+                        <p>Name of Guest : ${element.val().guest}</p>
+                        <p>Expected Arival Time: ${element.val().time}</p>
+                        <p>Entry Time : ${element.val().entry}</p>
+                        <button class="entry-time is-approved" data-id="${element.key}">Approved</button>
+                    `;
+                    }
+                    else{
                         allGuest += `
                         <div class="visitor-child">
                         <p>Resident : ${element.val().name}</p>
@@ -302,6 +315,7 @@ export async function readAllGuest()
                         <p>Entry Time : ${element.val().entry}</p>
                         <button class="entry-time" data-id="${element.key}">Approve</button>
                     `;
+                    }
                 });
                 if(allGuest) {
                     document.querySelector('.js-visitor-list').innerHTML = allGuest;
@@ -342,7 +356,8 @@ export async function updateEntry(id) {
     let time = new Date().toLocaleString();
     update(ref(db, `society/${data.apartmentId}/features/visitor-entry/${id}`),
         {
-            entry : time
+            entry : time,
+            status : 'approve'
         }
     );
     readAllGuest();
@@ -457,5 +472,4 @@ export async function readSocietyFund() {
         return '';
     }
 };
-
-
+//function

@@ -18,7 +18,7 @@ export function visitorEntry() {
                             <button>+</button>
                         </div> 
                         <div class="visitor-list js-visitor-list">
-                            <div class="loader">
+                            <div class="loader"></div>
                         </div>
                 <div>
             `;
