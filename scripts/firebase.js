@@ -435,6 +435,40 @@ export async function addMaintenaceAmt(maintenanceAmt) {
     }
     );
 }
+//Function to add all months for maintenace
+export async function addMonths(){
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    await set(ref(db, `society/${data.apartmentId}/features/expenses/maintenance/months/${data.username}`),
+    {
+        Jan : "not-paid",
+        Feb : "not-paid",
+        Mar : "not-paid",
+        April : "not-paid",
+        May : "not-paid",
+        Jun : "not-paid",
+        July : "not-paid",
+        Aug : "not-paid",
+        Sept : "not-paid",
+        Oct : "not-paid",
+        Nov : "not-paid",
+        Dec : "not-paid"
+    }
+    );
+}
+//Check if the user has opened the maintenace page first time and if yes then init months data 
+export async function checkMonthsAdded() {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const dbRef = ref(getDatabase());
+    const snapshot = await get(child(dbRef, `society/${data.apartmentId}/features/expenses/maintenance/months/${data.username}`));
+
+    if (snapshot.exists()) {
+        return;
+    } else {
+        alert("Months Init");
+        addMonths();
+    }
+};
+
 
 //Function to read the maintenance amount
 export async function readMaintenanceAmount() {

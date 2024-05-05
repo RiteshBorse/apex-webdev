@@ -1,12 +1,12 @@
-import { addMaintenaceAmt, addsocietyFund, apexWallet, readApexWallet, readMaintenanceAmount, readSocietyFund} from "../firebase.js";
+import { addMaintenaceAmt, addsocietyFund, apexWallet, checkMonthsAdded, readApexWallet, readMaintenanceAmount, readSocietyFund} from "../firebase.js";
 
 export async function expenses(){
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
     let getWalletData = await readApexWallet();
     let money = getWalletData.amount || 0;
-
     let getSocietyFund = await readSocietyFund();
     let societyFund = getSocietyFund.amount || 0;
+    checkMonthsAdded();
 
     document.querySelector('.js-features')
     .innerHTML = `
