@@ -77,7 +77,7 @@ export async function expenses(){
     //Add money to the wallet on click
     addMoney.addEventListener(('click') , async ()=>{
         let add = Number(moneyInput.value);
-        if(add > 0) {
+        if(add > 0 && add < 100000) {
             money += add;
             moneyInput.value = '';
             apexWallet(money);
