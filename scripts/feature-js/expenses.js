@@ -1,4 +1,4 @@
-import { addMaintenaceAmt, addsocietyFund, apexWallet, checkMonthsAdded, readApexWallet, readMaintenanceAmount, readSocietyFund} from "../firebase.js";
+import { addMaintenaceAmt, addsocietyFund, apexWallet, checkMonthsAdded, readApexWallet, readMaintenanceAmount, readMonths, readSocietyFund, updateMonthStatus} from "../firebase.js";
 
 export async function expenses(){
     let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
@@ -11,6 +11,9 @@ export async function expenses(){
     document.querySelector('.js-features')
     .innerHTML = `
         <div class="expenses">
+                <div class="processing hidden"> 
+                    <div>Processing Payment</div>
+                </div>
                     <button class="back-button hidden">Back</button>
                     <h2 class="wallet-balance">Apex Wallet Balance :  Rs ${money}</h2>
                     <div class="expense-buttons">
@@ -109,19 +112,54 @@ export async function expenses(){
     async function loadMonths()
     {
         const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
         const getMaintenanceAmt = await readMaintenanceAmount();
+        
+
+
         let listMonth = '';
         for(let i = 0; i < 12 ; i++) {
-            listMonth += `
-            <div class="pay-maintenance">
-                <p>Maintenace for ${months[i]} </p>
-                <p class="pm-amt"> Amount : ${getMaintenanceAmt.amount} </p>
-                <p>1/${i + 1}/24 - 1/${(i + 2)%12}/24</p>
-                <p>Status : Not Paid</p>
-                <button class="pay-button">Pay</button>
-            </div>`;
+            let getMonths= await readMonths(i);
+            if(getMonths.status == "Paid") {
+                listMonth += `
+                <div class="pay-maintenance">
+                    <p>Maintenace for ${months[i]} </p>
+                    <p class="pm-amt"> Amount : ${getMaintenanceAmt.amount} </p>
+                    <p>1/${i + 1}/24 - 1/${(i + 2)%12}/24</p>
+                    <p>Status : Paid</p>
+                    <button class="pay-button hidden" data-id="${i}">Pay</button>
+                </div>
+                `;
+            }
+            else{
+                listMonth += `
+                <div class="pay-maintenance">
+                    <p>Maintenace for ${months[i]} </p>
+                    <p class="pm-amt"> Amount : ${getMaintenanceAmt.amount} </p>
+                    <p>1/${i + 1}/24 - 1/${(i + 2)%12}/24</p>
+                    <p>Status : Not Paid</p>
+                    <button class="pay-button" data-id="${i}">Pay</button>
+                </div>`;
+            }
         }
         document.querySelector('.maintenace-list').innerHTML = listMonth;
+        document.querySelectorAll('.pay-button')
+            .forEach(button => {
+                button.addEventListener(('click') , async ()=>{
+                    const element = button.dataset.id;
+                    if( updateSocietyFund(Number(getMaintenanceAmt.amount)))
+                        {
+                            const temp = document.querySelector('.processing');
+                            temp.classList.remove('hidden');
+                            updateMonthStatus(element);   
+                            await loadMonths();
+                            temp.classList.add('hidden');
+                        }
+                   
+                   
+                })
+                
+            });
     }
     loadMonths();
    
@@ -131,7 +169,7 @@ export async function expenses(){
     {
         if(money < fund) {
             alert('You have insufficent balance to pay !');
-            return;
+            return false;
         }
         money -= fund;
         apexWallet(money);
@@ -140,7 +178,8 @@ export async function expenses(){
         addsocietyFund(societyFund);
         document.querySelector('.society-fund').innerText = `
         Society Fund : Rs ${societyFund}
-        `;  
+        `;
+        return true;  
     }
 
 }
