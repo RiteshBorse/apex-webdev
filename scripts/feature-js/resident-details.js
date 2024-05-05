@@ -3,9 +3,7 @@ export function residentDetails() {
         .innerHTML = `
 
         <div class="resdetailscm-title">Resident Details</div>
-
-
-                <table>
+                 <table>
                     <thead>
                         <tr>
                             <th> Flat Num</th>

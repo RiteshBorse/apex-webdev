@@ -124,14 +124,23 @@ export async function expenses(){
         document.querySelector('.maintenace-list').innerHTML = listMonth;
     }
     loadMonths();
+   
 
     //Function to update the society fund
     function updateSocietyFund(fund)
     {
-        societyFund += fund;
-        addsocietyFund(fund);
+        if(money < fund) {
+            alert('You have insufficent balance to pay !');
+            return;
+        }
         money -= fund;
         apexWallet(money);
+        walletBalance.innerText = `Apex Wallet Balance :  Rs ${money}`;
+        societyFund += fund;
+        addsocietyFund(societyFund);
+        document.querySelector('.society-fund').innerText = `
+        Society Fund : Rs ${societyFund}
+        `;  
     }
 
 }
