@@ -2,57 +2,54 @@ export function residentDetails() {
     document.querySelector('.js-features')
         .innerHTML = `
 
-        <div class="resdetailscm-title">Resident Details</div>
-                 <table>
-                    <thead>
-                        <tr>
-                            <th> Flat Num</th>
-                            <th>Name</th>
-                            <th>Contact</th>
-                            <th>Aadhaar</th>
-                            <th>Ownership</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>B-401</td>
-                            <td>Mrs. Vineeta Singh</td>
-                            <td>+91-8745698764</td>
-                            <td>xxxx xxxx 5898</td>
-                            <td>Owner</td>
-                        </tr>
-                        <tr>
-                            <td>B-401</td>
-                            <td>Mrs. Vineeta Singh</td>
-                            <td>+91-8745698764</td>
-                            <td>xxxx xxxx 5898</td>
-                            <td>Owner</td>
-                        </tr>
-                        <tr>
-                            <td>A-101</td>
-                            <td>Mr. Ashneer Grover</td>
-                            <td>+91-9568745258</td>
-                            <td>xxxx xxxx 5896</td>
-                            <td>Rental</td>
-                        </tr>
-                        <tr>
-                            <td>C-601</td>
-                            <td>Mrs.Ghazal Alagh</td>
-                            <td>+91-9875642485</td>
-                            <td>xxxx xxxx 5875</td>
-                            <td>Rental</td>
-                        </tr>
-                        <tr>
-                            <td>D-234</td>
-                            <td>Mr.Piyush Bansal</td>
-                            <td>+91-9745896547</td>
-                            <td>xxxx xxxx 2567</td>
-                            <td>Owner</td>
-                        </tr>
-                    </tbody>
-
-                </table>
-
+        <section class="table__body">
+        <table>
+            <thead>
+                <tr>
+                    
+                    <th>ID</th>
+                    <th>Resident</th>
+                    <th>Apartment</th>
+                    <th>Contact info</th>
+                    <th>Aadhaar</th>
+                    <th>Ownership</th>  
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1 </td>
+                    <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Zinzu Chan Lee</td>
+                    <td> B-401 </td>
+                    <td> +91 8457596325 </td>
+                    <td>xxxx xxxx 8745</td>
+                    <td>
+                        <p class="status owner">Owner</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 2 </td>
+                    <td><img src="images/Jeet Saru.jpg" alt=""> Jeet Saru </td>
+                    <td> A-302 </td>
+                    <td> +91 8459687425 </td>
+                    <td>xxxx xxxx 3458</td>
+                    <td>
+                        <p class="status rent">Rent</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td><img src="images/Sonal Gharti.jpg" alt=""> Sonal Gharti </td>
+                    <td> C-802 </td>
+                    <td> +91 9876413784</td>
+                    <td>xxxx xxxx 8456</td>
+                    <td>
+                        <p class="status owner">Owner</p>
+                    </td>
+                </tr>
+               
+              
+            </tbody>
+        </table>
+    </section>
         `
 }

@@ -1,55 +1,164 @@
-.wallet{
-    display: flex;
-    flex-direction: column;
-}
-.wallet-balance{
-    position: absolute;
-    right: 20px;
-}
-.maintenace-list{
-    display: flex;
-    flex-direction: column;
-    height: 70vh;
-    width: max-content;
-    overflow: auto;
-}
-.pay-maintenance{
-    margin-top: 20px;
-}
-.hidden{
-    visibility: hidden;
-}
-.init{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% ,50%);
-    background-color: lightgray;
-    padding: 20px 40px;
-   
-}
-@keyframes fade {
-    0% {
-      opacity: 0.3;
-    }
-    50% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0.3;
-    }
+.expense-buttons{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
   }
   
-  .processing {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    background-color: lightgrey;
-    width: max-content; /* Adjust width as needed */
-    height: max-content; /* Adjust height as needed */
-    padding: 20px 40px;
-    animation: process 1s linear infinite, fade 0.65s ease-in-out infinite; /* Adjust animation duration and timing function as needed */
+  .features{
+    background-color: transparent;
+  }
+  
+  .main{
+    overflow: scroll;
+  }
+  
+  .maintenance ,.view-expenses{
+  font-size: 24px;
+  padding: 10px 10px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  transition: all 0.5s;
+  }
+  
+  .maintenance:hover ,.view-expenses:hover{
+    background-color: rgb(155, 250, 154);
   }
   
   
+  .wallet{
+      display: flex;
+      border-color: rgb(4, 4, 3);
+      border-style: solid;
+      border-color: rgb(2, 2, 2);
+      border-radius: 5px;
+     margin-left: 800px;
+     width: max-content;
+  
+  }
+  .wallet-balance{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+  }
+  .maintenace-list{
+     width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      height: 80vh;
+      overflow: auto;
+      margin: 20px;
+  }
+  
+  .pay-maintenance{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(225, 234, 240);
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      width: 300px;
+      border-color: rgb(214, 210, 210);
+      border-style: solid;
+      font-weight: 500;
+  }
+  .hidden{
+      visibility: hidden;
+  }
+  .init{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% ,50%);
+      background-color: lightgray;
+      padding: 20px 40px;
+     
+  }
+  @keyframes fade {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    
+    .processing {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% , -50%);
+      background-color: green;
+      width: max-content; /* Adjust width as needed */
+      height: max-content; /* Adjust height as needed */
+      padding: 20px 40px;
+      color : white;
+      font-size: 20px;
+      animation: process 1s linear infinite, fade 0.65s ease-in-out infinite; /* Adjust animation duration and timing function as needed */
+    }
+  
+    .society-fund{
+      font-weight: 400;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50% ,-50%);
+      font-size: 30px;
+    }
+  
+    .society-fund span{
+     font-size: 60px;
+     font-weight: 700;
+    }
+    
+    .pay-button{
+      padding: 2px 20px;
+      align-self: center;
+      background-color: rgb(255, 255, 255);
+      border-color: rgb(190, 165, 165);
+      color: rgb(0, 0, 0);
+      border-radius: 5px;
+  
+    }
+    
+    .money-input{
+      text-decoration: underline;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 10px;
+  
+  
+    }
+  
+    .add-money-button{
+      padding: 2px 5px;
+      align-self: center;
+      background-color: rgb(75, 75, 75);
+      color: aliceblue;
+      margin: 10px;
+      border-radius: 5px;
+    }
+  
+  .wallet p{
+    position: absolute;
+    top:40px;
+     font-size: 42px;
+     font-weight: 600;
+    left: 70px;
+  }
+  
+  .back-button{
+    margin: 15px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+   border: none;
+   font-size: 30px;
+   background: white;
+  }

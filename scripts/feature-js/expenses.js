@@ -14,7 +14,7 @@ export async function expenses(){
                 <div class="processing hidden"> 
                     <div>Processing Payment</div>
                 </div>
-                    <button class="back-button hidden">Back</button>
+                    <button class="back-button hidden">&#8617</button>
                     <h2 class="wallet-balance">Apex Wallet Balance :  Rs ${money}</h2>
                     <div class="expense-buttons">
                         <button class="maintenance">Maintenance</button>
@@ -34,7 +34,7 @@ export async function expenses(){
                         <input class="input-amt" placeholder="Set Maintenance amount" type="number">
                         <button class="set-amt">Set</button>
                     </div>
-                    <div class="society-fund hidden"> Society Fund : Rs ${societyFund} </div>
+                    <div class="society-fund hidden"> Society Fund <br> <span> Rs ${societyFund}</span> </div>
                 </div>
                 `;
     //Function to check if the user is chairman
@@ -167,6 +167,7 @@ export async function expenses(){
     //Function to update the society fund
     function updateSocietyFund(fund)
     {
+        
         if(money < fund) {
             alert('You have insufficent balance to pay !');
             return false;

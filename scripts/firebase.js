@@ -410,9 +410,9 @@ export async function readAllEvents()
                 snapshot.forEach(element => {
                         allEvent += `
                         <div class="event">
-                            <p>Name of Event : ${element.val().event}</p>
-                            <p>Location : ${element.val().location}</p>
-                            <p>Date and Time : ${element.val().dateTime}</p>
+                            <p>Name of Event :<span> ${element.val().event}</span></p>
+                            <p>Location : <span>${element.val().location}</span></p>
+                            <p>Date and Time : <span>${element.val().dateTime}</span></p>
                         </div>
                     `;
                 });
