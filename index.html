@@ -1,43 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-   <link rel="stylesheet" href="stylesheets/login.css">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<html>
 
+<head>
+    <title>Apex - Where Management meets modern Living</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/landing.css">
 </head>
+
 <body>
-    <div>
-        <div class="main">
-            <div class="left"> 
-                <img class="logo-image" src="images/logo.png">
-            </div>
-            <div class="right js-right"> 
-                
-                <div class="login-input-form">
-                   <h2>Log in</h2>
-                    <input class="login-input js-apartid" type="text" placeholder="Enter Apartment ID" required>
-                    <input class="login-input js-username" type="text" placeholder="Username" required>
-                    <input class="login-input js-password" type="password" placeholder="Password" required>  
-                    <button class="login-button js-login-button">Login</button>
-                    <p>Forgot your Password ?</p>
-                    <a href="sign-up-user.html"><p>Dont have a account ? Sign Up</p></a>
+    <header>
+        <a href="#" class="logo">Apex</a>
+        <ul>
+            <li><a href="login.html" class="active">Login</a></li>
+            <li><a href="sign-up-user.html">Signup</a></li>
+            <li><a href="sign-up.html">Get Started</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="assets/stars.png" id="stars">
+        <img src="assets/skyline2.png" id="skyline2">
+        <img src="assets/skyline1.png" id="skyline1">
+        <img src="assets/moon.png" id="moon">
+        <p id="Apex">Apex</p>
+        <img src="assets/logo.png" id="logo">
+        <img src="assets/buildings/building1.png" id="building1">
+        <img src="assets/buildings/building2.png" id="building2">
+        <img src="assets/buildings/building3.png" id="building3">
+        <img src="assets/buildings/building4.png" id="building4">
+        <img src="assets/buildings/building5.png" id="building5">
+        <img src="assets/buildings/building6.png" id="building6">
+        
+        
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>
+            <pre>           Housing Society Management System key functions</pre>
+        </h2>
+        <div class="set">
+            <div class="functionpreview1">
+                <div class="function-card">
+                    <img src="assets/icons8-document-50.png" alt="">
+                    <div>
+                        <div>Document Wallet</div>
+                        <div>Say goodbye to paperwork chaos - store leases, agreements, and more securely online!</div>
+                    </div>
                 </div>
+                <div class="function-card">
+                    <img src="assets/icons8-complaint-50.png" alt="">
+                    <div>
+                        <div>Complaint Tracking</div>
+                        <div>No complaint left behind - monitor, manage, and mend issues swiftly with our tracking tool!</div>
+                    </div>
+                </div>
+                <div class="function-card">
+                    <img src="assets/icons8-hall-48.png" alt="">
+                    <div>
+                        <div>Ammenites Booking</div>
+                        <div>From rooftop lounges to state-of-the-art gyms, book your slice of paradise in seconds!</div>
+                    </div>
+                </div>
+                <div class="function-card">
+                    <img src="assets/icons8-caretaker-60.png" alt="">
+                    <div>
+                        <div>Resident Details</div>
+                        <div>Connect with your neighbors effortlessly - dive into our resident directory!</div>
+                    </div>
+                </div>
+           
+            </div>
+            <div class="line"></div>
+            <div class="functionpreview2">
+                <div class="function-card" id="a">
+                    <img src="assets/icons8-guest-50.png" alt="">
+                    <div>
+                        <div>Visitor Entry</div>
+                        <div>Simplify guest access - track, manage, and greet visitors hassle-free!</div>
+                    </div>
+                </div>
+                <div class="function-card">
+                    <img src="assets/icons8-event-50.png" alt="">
+                    <div>
+                        <div>Event Calender</div>
+                        <div>Never miss a beat in your community - sync up with our vibrant event calendar!</div>
+                    </div>
+                </div>
+                <div class="function-card">
+                    <img src="assets/icons8-46-66.png" alt="">
+                    <div>
+                        <div>Announcement Post</div>
+                        <div>One click to inform them all - streamline announcements for a connected community!</div>
+                    </div>
+                </div>
+                <div class="function-card">
+                    <img src="assets/icons8-people-50.png" alt="">
+                    <div>
+                        <div>Expenses</div>
+                        <div>Track, analyze, optimize - take charge of your apartment's finances like never before!</div>
+                    </div>
+                </div>
+           
             </div>
         </div>
+       
     </div>
-    <script src="scripts/firebase.js" type="module"></script>
-    <script src="scripts/login.js" type="module"></script>  
+    <script src="scripts/landing.js"></script>
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social-icons">
+            <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+
+        </ul>
+        <p>©2024 Apex - Where Management Meets Modern Living | All Rights Reserved</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
-
-
-
-
-
-
-

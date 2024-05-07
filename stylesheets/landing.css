@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.915), black);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo {
+    color: #ffff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li {
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a {
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #ff8c77;
+    border-radius: 20px;
+    transition: all 0.3s ease-in;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background: #f1a598;
+    color: black;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    overflow: hidden;
+    perspective: 100px;
+    perspective-origin: 50% 100%;
+}
+
+section::before
+{
+    content: '';
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:100px;
+    z-index: 1000;
+    background: linear-gradient(to top,black,transparent);
+}
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+
+/* --------------  Parallax images CSS ------------------- */
+
+#Apex{
+    position: absolute;
+    color: white;
+    font-size: 85px;
+    font-weight: 700;
+    z-index: 40;
+    transform: translate3d(590px,200px,10px);
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+#skyline2 {
+    z-index: 10;
+    transform: translate3d(-20px, -420px, -25px) scale(1.25);
+    opacity: 0.25;
+
+}
+
+#skyline1 {
+    transform: translate3d(-800px, 20px, 0px) scale(0.53);
+    z-index: 20;
+    opacity: 0.3;
+}
+
+#moon {
+    z-index: 40;
+    transform: translate3d(675px,-400px,0px) scale(0.05);
+    border-radius: 50%;
+    box-shadow: 0 0 300px 100px whitesmoke;
+    opacity:0.65;
+}
+
+#stars {
+    z-index: 1;
+    opacity: 0.5;
+    transform: scale(1.4) translate3d(0px, -185px, -50px);
+}
+
+#logo {
+    z-index: 40;
+    transform: translate3d(460px, 120px,10px) scale(0.4);
+    border-radius: 50%;
+    box-shadow: 0 0 50px 10px #ebd9cc8f;
+}
+
+#building1{
+    z-index: 55;
+    transform: translate3d(-250px,-200px,25px) scale(0.25) ;
+    opacity: 1;
+}
+#building2{
+    z-index: 55;
+    transform: translate3D(1050px,-275px,25px) scale(0.25);
+    opacity: 2;
+}
+#building3{
+    z-index: 50;
+    transform: translate3d(-180px,80px,25px) scale(0.25) ;
+    opacity: 1;
+}
+#building4{
+    z-index: 50;
+    transform: translate3D(740px,10px,25px) scale(0.25);
+    opacity: 1;
+}
+#building5{
+    z-index: 45;
+    transform: translate3d(-210px,320px,25px) scale(0.22) ;
+    opacity: 0.7;
+}
+#building6{
+    z-index: 45;
+    transform: translate3D(280px,230px,25px) scale(0.22);
+    opacity: 0.7;
+}
+
+
+
+/* --------------- Section  CSS  -------------------- */
+.sec
+{
+    position: relative;
+    padding: 100px;
+    /* background: #614a3b9c;
+    background: linear-gradient(black,white);
+    background-image: linear-gradient(to bottom, black 40%, #f6bfa8c0 100%); */
+    background-color: black;
+
+}
+.sec h2 
+{
+    font-size: 2.5em;
+    color: #fe8f60;
+    text-shadow: -1px 0 black, 1px 0 black, 0 -1px black, 0 1px black;
+    text-align: justify;
+}
+.set{
+    margin-top: 50px;
+    display: flex;
+    margin-bottom: 50px;
+}
+.line{
+    background-color: white;
+    width: 1px;
+    height: 150vh;
+}
+
+.functionpreview1 , .functionpreview2 {
+    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  height: max-content;
+  }
+
+  .functionpreview2{
+    margin-top: 150px;
+  }
+  .function-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgb(222, 222, 222);
+    height: 200px;
+    width: 500px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 25px rgba(255, 255, 255, 0.25);
+    padding: 30px;
+  }
+  .function-card div :nth-child(1){
+    font-weight: 700;
+    font-size: 30px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  .function-card div :nth-child(2){
+    font-size: 18px;
+  }
+  .function-card img{
+    background-color: white;
+    padding: 20px;
+    border-radius: 25px;
+    height: 100px;
+    width: 100px;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.75);
+  }
+  
+ 
+  footer
+  {
+      position: relative;
+      width: 100%;
+      background:#f6b5a8;
+      min-height: 100px;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+  footer .social-icons,
+  footer .menu
+  {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+  }
+  footer .social-icons li,
+  footer .menu li
+  {
+      list-style: none;
+  }
+  footer .social-icons li a
+  {
+      font-size: 2em;
+      color: black;
+      margin: 0 10px;
+      display: inline-block;
+      transition: 0.5s;
+  }
+  footer .social-icons li a:hover
+  {
+      transform: translateY(-10px)
+  }
+  footer .menu li a
+  {
+      font-size: 1.2em;
+      color: black;
+      margin: 0 10px;
+      display: inline-block;
+      text-decoration: none;
+      opacity: 0.75;
+  }
+  footer .menu li a:hover
+  {
+      opacity: 1;
+  }
+  footer p
+  {
+      color: black;
+      text-align: center;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-size: 1em;
+  }
+  footer .wave
+  {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url(../assets/wave.png);
+      background-size: 1000px 100px;
+  }
+  footer .wave#wave1
+  {
+      z-index: 100;
+      opacity: 0.9;
+      bottom: 0;
+      animation: animateWave 4s linear infinite;
+  }
+  footer .wave#wave2
+  {
+      z-index: 999;
+      opacity: 0.5;
+      bottom: 10px;
+      animation: animateWave_02 4s linear infinite;
+  }
+  footer .wave#wave3
+  {
+      z-index: 1000;
+      opacity: 0.2;
+      bottom: 15px;
+      animation: animateWave_02 3s linear infinite;
+  }
+  footer .wave#wave4
+  {
+      z-index: 999;
+      opacity: 0.7;
+      bottom: 20px;
+      animation: animateWave_02 3s linear infinite;
+  }
+  
+  
+  @keyframes animateWave
+  {
+      0%
+      {
+          background-position-x: 1000px;
+      }
+      100%
+      {
+          background-position-x: 0px;
+      }
+  }
+  @keyframes animateWave_02
+  {
+      0%
+      {
+          background-position-x: 0px;
+      }
+      100%
+      {
+          background-position-x: 1000px;
+      }
+  }
