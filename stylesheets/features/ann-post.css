@@ -6,6 +6,7 @@
     background-color: #ffffff;
 }
 
+
 .features h1 {
     height: max-content;
     align-self: flex-start;
@@ -14,7 +15,9 @@
 }
 
 .announcement-create {
-    width: 100%;
+    width: 70%;
+    margin: 20px;
+    align-self: center;
     height: max-content;
     display: flex;
     flex-direction: column;
@@ -22,6 +25,9 @@
     justify-content: center;
     position: absolute;
     visibility: hidden;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
 }
 
 .announcement-create-show{
@@ -30,27 +36,38 @@
 }
 .ann-info{
     display: flex;
-    margin-top: 20px;
     gap: 20px;
+    align-items: center;
+  
 }
 .ann-input{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
+    text-decoration: underline;
+
+}
+
+.main{
+    overflow: scroll;
 }
 
 .input-title {
-    text-align: center;
+    font-size: 16px;
+   margin-top: 10px;
     height: max-content;
     width: 500px;
     padding: 10px;
+    border: none;
 }
 
 .input-description{
-    text-align: center;
-    height: 100px;
+ font-size: 16px;
+    height: max-content;
+    margin-bottom: 10px;
     width: 500px;
     padding: 10px;
+    border: none;
 }
 
 
@@ -64,33 +81,41 @@
     height: max-content;
 }
 .announcement-list{
-    width: 100%;
+ width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-self: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-left: 50px;
+    overflow-wrap: break-word;
+  
+
 }
 
 .banner{
-    margin-top: 20px;
-    background-color: violet;
+    margin-top: 30px;
+    background-color: rgb(245, 245, 232);
     border-radius: 20px;
-    width: 80%;
-    height: fit-content;
+    width: 300px;
+    height: 150px;
     padding-left: 20px;
     color: rgb(84, 0, 84);
-    box-shadow: 2px 2px 20px purple;
+    overflow: scroll;
+    box-shadow: 10px 10px 5px rgb(219, 238, 244);
 }
 .banner .heading{
     font-weight: bold;
     font-size: 20px;
     height: max-content;
-    padding: 20px;
+    padding: 10px;
+    padding-top: 20px;
 }
 
 .banner .description{
     height: max-content;
-    padding: 20px;
+    padding: 10px;
 }
 
 

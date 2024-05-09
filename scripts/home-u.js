@@ -1,4 +1,5 @@
 import { search } from '../scripts/utlis/fuse.js'
+import { ammBooking } from './feature-js/amm-booking.js';
 import { annPost } from './feature-js/ann-post.js';
 import { complaint } from './feature-js/complaint.js';
 import { documentWallet } from './feature-js/document-wallet.js';
@@ -70,10 +71,7 @@ document.querySelector('.js-complaint-track')
 //Ammenites booking on click
 document.querySelector('.js-ammenites-booking')
     .addEventListener(('click'), () => {
-        document.querySelector('.js-features')
-            .innerHTML = `
-                <p style=" color : blue ; font-size : 45px; "> Ammenites booking will be loaded Here</p>
-            `;
+       ammBooking();
     });
 
 //Resident details on click

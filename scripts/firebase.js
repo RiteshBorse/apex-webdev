@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
 import { getDatabase, ref, set, child, get ,push , update , remove} from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
 import { generateRandomNumber } from "./utlis/randomid.js";
+import { complaint } from "./feature-js/complaint.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDwISHPEBgBixOR9x5xSEdu7Fb5NpNtyQc",
@@ -541,3 +542,117 @@ export async function readSocietyFund() {
     }
 };
 
+//Function to add complaint 
+export async function addAmenity(complaint) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    let newId = generateRandomNumber();
+    await set(ref(db, `society/${data.apartmentId}/features/Amenity/${newId}`),
+        {
+            name: data.firstName,
+            date : new Date().toDateString(),
+            complaint: complaint,
+            status : '🔴 Pending'
+        }
+    );
+}
+
+export async function approveAmm(id) {
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    update(ref(db, `society/${data.apartmentId}/features/Amenity/${id}`),
+        {
+            status : '✅ Approved'
+        }
+    );
+    readAllAmm();
+}
+
+//Function to read all complaint
+export async function readAllAmm()
+{
+    let allComplaint = '';
+    let data = JSON.parse(sessionStorage.getItem('loggeduserdata'));
+    const db = getDatabase();
+    const dbRef = ref(db);
+    get(child(dbRef,`society/${data.apartmentId}/features/Amenity/`))
+        .then((snapshot) => {
+            if(data.post == 'Chairman')
+            {
+                snapshot.forEach(element => {
+                const status = element.val().status;
+                const statusColor = status === '🔴 Pending' ? 'red' : 'green';
+                if(status == "✅ Approved")
+                {
+                    allComplaint += `
+                    <div class="complaint-list">
+                    <img width="25" height="25" src="https://img.icons8.com/ios/50/booking.png" alt="booking"/>
+                    <div class="user-info" style="margin-left: 20px;">
+                    <div class="user-complaint">${element.val().complaint}</div>
+                    <div class="name-date">
+                    <div class="complaint-date">${element.val().date}</div>|
+                    <div class="user-name">${element.val().name}</div>
+                    <div class="complaint-status" style="color: ${statusColor};">${status} </div>
+                    </div>
+                    </div>
+                    <div class="resolve resolve-show is-resolved js-resolve" data-id="${element.key}" >Approved</div>
+                    </div>
+                    `
+                }
+                else{
+                    allComplaint += `
+                    <div class="complaint-list">
+                    <img width="25" height="25" src="https://img.icons8.com/ios/50/booking.png" alt="booking"/>
+                    <div class="user-info" style="margin-left: 20px;">
+                    <div class="user-complaint">${element.val().complaint}</div>
+                    <div class="name-date">
+                    <div class="complaint-date">${element.val().date}</div>|
+                    <div class="user-name">${element.val().name}</div>
+                    <div class="complaint-status" style="color: ${statusColor};">${status} </div>
+                    </div>
+                    </div>
+                    <div class="resolve resolve-show js-resolve" data-id="${element.key}" >Approve</div>
+                    </div>
+                    `
+                }
+
+                   
+               });
+            }
+            else {
+                snapshot.forEach(element => {
+                    const status = element.val().status;
+                    const statusColor = status === '🔴 Pending' ? 'red' : 'green';
+                    allComplaint += `
+                   <div class="complaint-list">
+                   <img width="25" height="25" src="https://img.icons8.com/ios/50/booking.png" alt="booking"/>
+                   <div class="user-info" style="margin-left: 20px;">
+                   <div class="user-complaint">${element.val().complaint}</div>
+                   <div class="name-date">
+                   <div class="complaint-date">${element.val().date}</div>|
+                   <div class="user-name">${element.val().name}</div>
+                   <div class="complaint-status" style="color: ${statusColor};">${status}</div>
+                   </div>
+                   </div>
+                   <div class="resolve">Resolve</div>
+                   </div>
+                   `
+               });
+            }
+            if(allComplaint)
+               { 
+                   document.querySelector('.js-display-complaint')
+                   .innerHTML = allComplaint;
+               }
+               else {
+                   document.querySelector('.js-display-complaint')
+                   .innerHTML = '';
+               }
+
+            document.querySelectorAll('.js-resolve')
+                .forEach((button) => {
+                    button.addEventListener(('click') , () => {
+                        const element = button.dataset.id;
+                        approveAmm(element);
+                    });
+                })          
+        })
+}

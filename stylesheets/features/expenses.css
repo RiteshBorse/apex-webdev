@@ -162,3 +162,23 @@
    font-size: 30px;
    background: white;
   }
+
+  .set-maintenance-amt button{
+    color: white;
+     font-size: 14px;
+     background: rgb(56, 55, 55);
+     border-radius: 5px;
+     padding: 5px 10px;
+    }
+    
+    .input-amt{
+      border: none;
+      width: 200px;
+      text-decoration: underline;
+      font-size: 16px;
+      padding: 5px 10px;
+    }
+    
+    .set-maintenance-amt{
+    margin-left: 800px;
+    }
